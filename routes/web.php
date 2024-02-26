@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\HeaderController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
@@ -33,6 +34,9 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/header', [HeaderController::class, 'create'])->name('header');
     Route::get('/header/show', [HeaderController::class, 'index'])->name('show.header');
+
+    Route::get('/about', [AboutController::class, 'create'])->name('about');
+    Route::get('/about/show', [AboutController::class, 'index'])->name('show.about');
 });
 
 require __DIR__ . '/auth.php';

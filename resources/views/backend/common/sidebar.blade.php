@@ -29,8 +29,8 @@
                 <div class="collapse" id="about" aria-labelledby="headingOne"
                     data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{ route('header') }}">Add About Infoes</a>
-                        <a class="nav-link" href="{{ route('show.header') }}">Show About</a>
+                        <a class="nav-link" href="{{ route('about') }}">Add About Infoes</a>
+                        <a class="nav-link" href="{{ route('show.about') }}">Show About</a>
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages"
