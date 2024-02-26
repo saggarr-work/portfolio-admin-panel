@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ExperienceController;
+use App\Http\Controllers\ExperienceDteailsController;
 use App\Http\Controllers\HeaderController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
@@ -32,11 +34,20 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/header', [HeaderController::class, 'create'])->name('header');
-    Route::get('/header/show', [HeaderController::class, 'index'])->name('show.header');
+    // for header 
+    Route::get('/header', [HeaderController::class, 'index'])->name('header');
+    Route::get('/header/show', [HeaderController::class, 'show'])->name('show.header');
 
-    Route::get('/about', [AboutController::class, 'create'])->name('about');
-    Route::get('/about/show', [AboutController::class, 'index'])->name('show.about');
+    // for about 
+    Route::get('/about', [AboutController::class, 'index'])->name('about');
+    Route::get('/about/show', [AboutController::class, 'show'])->name('show.about');
+
+    // for experience 
+    Route::get('/experience', [ExperienceController::class, 'index'])->name('experience');
+    Route::get('/experience/show', [ExperienceController::class, 'show'])->name('show.experience');
+
+    // for experience details 
+    Route::get('/experience/details', [ExperienceDteailsController::class, 'index'])->name('details.experience');
 });
 
 require __DIR__ . '/auth.php';

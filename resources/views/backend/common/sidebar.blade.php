@@ -33,6 +33,20 @@
                         <a class="nav-link" href="{{ route('show.about') }}">Show About</a>
                     </nav>
                 </div>
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#experience"
+                    aria-expanded="false" aria-controls="experience">
+                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    Experience
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="experience" aria-labelledby="headingOne"
+                    data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="{{ route('experience') }}">Add Experience</a>
+                        <a class="nav-link" href="{{ route('details.experience') }}">Add Details</a>
+                        <a class="nav-link" href="{{ route('show.experience') }}">Show Experience</a>
+                    </nav>
+                </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages"
                     aria-expanded="false" aria-controls="collapsePages">
                     <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
