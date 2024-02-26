@@ -6,6 +6,8 @@ use App\Http\Controllers\ExperienceDteailsController;
 use App\Http\Controllers\HeaderController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\ServiceDetailsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,9 +47,13 @@ Route::middleware('auth')->group(function () {
     // for experience 
     Route::get('/experience', [ExperienceController::class, 'index'])->name('experience');
     Route::get('/experience/show', [ExperienceController::class, 'show'])->name('show.experience');
-
-    // for experience details 
     Route::get('/experience/details', [ExperienceDteailsController::class, 'index'])->name('details.experience');
+
+    // for services
+    Route::get('/services', [ServiceController::class, 'index'])->name('services');
+    Route::get('/services/show', [ServiceController::class, 'show'])->name('show.services'); 
+    Route::get('/service/details', [ServiceDetailsController::class, 'index'])->name('details.service');
+   
 });
 
 require __DIR__ . '/auth.php';
