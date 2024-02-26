@@ -61,6 +61,19 @@
                         <a class="nav-link" href="{{ route('show.services') }}">Show Service</a>
                     </nav>
                 </div>
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#portfolio"
+                    aria-expanded="false" aria-controls="portfolio">
+                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    Portfolio
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="portfolio" aria-labelledby="headingOne"
+                    data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="{{ route('portfolio') }}">Add Portfolio</a>
+                        <a class="nav-link" href="{{ route('show.portfolio') }}">Show Portfolio</a>
+                    </nav>
+                </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages"
                     aria-expanded="false" aria-controls="collapsePages">
                     <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>

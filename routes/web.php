@@ -5,6 +5,7 @@ use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\ExperienceDteailsController;
 use App\Http\Controllers\HeaderController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ServiceDetailsController;
@@ -53,6 +54,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/services', [ServiceController::class, 'index'])->name('services');
     Route::get('/services/show', [ServiceController::class, 'show'])->name('show.services'); 
     Route::get('/service/details', [ServiceDetailsController::class, 'index'])->name('details.service');
+
+    // for portfolio 
+    Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio');
+    Route::get('/portfolio/show', [PortfolioController::class, 'show'])->name('show.portfolio');
    
 });
 
