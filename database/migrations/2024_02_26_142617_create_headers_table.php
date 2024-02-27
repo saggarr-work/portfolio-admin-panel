@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('headers', function (Blueprint $table) {
             $table->id();
+            $table->string('fullName');
+            $table->string('designation');
+            $table->string('cv');
+            $table->string('photo');
+            $table->string('githubLink');
+            $table->string('facebookLink');
+            $table->string('instagramLink');
+            $table->string('whatsappLink');
             $table->timestamps();
         });
     }

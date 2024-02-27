@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
+            $table->string('emailUsername');
+            $table->string('directEmailLink');
+            $table->string('messengerUsername');
+            $table->string('directMessengerLink');
+            $table->string('whatsappUsername');
+            $table->string('directWhatsappLink');
             $table->timestamps();
         });
     }

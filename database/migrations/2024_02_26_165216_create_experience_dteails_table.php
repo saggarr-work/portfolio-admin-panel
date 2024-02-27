@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('experience_dteails', function (Blueprint $table) {
             $table->id();
+            $table->integer('experience_id');
+            $table->string('languageOrTools');
+            $table->string('levelOfExperience');
             $table->timestamps();
         });
     }
