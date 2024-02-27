@@ -11,13 +11,13 @@
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#header"
                     aria-expanded="false" aria-controls="header">
                     <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                    Header
+                    Header/Footer
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
                 <div class="collapse" id="header" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{ route('header') }}">Add Header Infoes</a>
-                        <a class="nav-link" href="{{ route('show.header') }}">Show Header</a>
+                        <a class="nav-link" href="{{ route('header') }}">Add Infoes</a>
+                        <a class="nav-link" href="{{ route('show.header') }}">Show Infoes</a>
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#about"
@@ -71,8 +71,8 @@
                         <a class="nav-link" href="{{ route('show.portfolio') }}">Show Portfolio</a>
                     </nav>
                 </div>
-                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#testimonials"
-                    aria-expanded="false" aria-controls="testimonials">
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                    data-bs-target="#testimonials" aria-expanded="false" aria-controls="testimonials">
                     <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                     Testimonials
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -84,7 +84,20 @@
                         <a class="nav-link" href="{{ route('show.testimonials') }}">Show Testimonials</a>
                     </nav>
                 </div>
-                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#contact"
+                    aria-expanded="false" aria-controls="contact">
+                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    Contact
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="contact" aria-labelledby="headingOne"
+                    data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="{{ route('contact') }}">Add Contact</a>
+                        <a class="nav-link" href="{{ route('show.contact') }}">Show Contact</a>
+                    </nav>
+                </div>
+                {{-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
                     data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                     <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                     Pages
@@ -131,7 +144,7 @@
                 <a class="nav-link" href="tables.html">
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                     Tables
-                </a>
+                </a> --}}
             </div>
         </div>
         <div class="sb-sidenav-footer">

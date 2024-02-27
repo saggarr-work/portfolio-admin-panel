@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\ExperienceDteailsController;
 use App\Http\Controllers\HeaderController;
@@ -63,6 +64,10 @@ Route::middleware('auth')->group(function () {
     // for testimonial 
     Route::get('/testimonial', [TestimonialController::class, 'index'])->name('testimonials');
     Route::get('/testimonial/show', [TestimonialController::class, 'show'])->name('show.testimonials');
+
+    // for contact 
+    Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+    Route::get('/contact/show', [ContactController::class, 'show'])->name('show.contact');
    
 });
 
