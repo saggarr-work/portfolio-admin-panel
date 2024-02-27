@@ -14,16 +14,16 @@
             <div class="row">
                 <form class="row g-3">
                     <div class="col-md-6">
-                        <label for="Experience" class="form-label">Experience</label>
-                        <input type="number" class="form-control" id="Experience" value="" required>
+                        <label for="experience" class="form-label">Experience</label>
+                        <input type="number" class="form-control" id="experience" value="" required>
                     </div>
                     <div class="col-md-6">
-                        <label for="Clients" class="form-label">Clients</label>
-                        <input type="number" class="form-control" id="Clients" value="" required>
+                        <label for="clients" class="form-label">Clients</label>
+                        <input type="number" class="form-control" id="clients" value="" required>
                     </div>
                     <div class="col-md-6">
-                        <label for="Projects" class="form-label">Projects</label>
-                        <input type="number" class="form-control" id="Projects" value="" required>
+                        <label for="projects" class="form-label">Projects</label>
+                        <input type="number" class="form-control" id="projects" value="" required>
                     </div>
                     <div class="col-md-6">
                         <label for="about_photo" class="form-label">Upload About Photo</label>

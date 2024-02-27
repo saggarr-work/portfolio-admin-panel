@@ -17,8 +17,6 @@
                         <label for="field_of_experience" class="form-label">Field of experience</label>
                         <input type="text" class="form-control" id="field_of_experience" value="" required>
                     </div>
-                
-
                     <div class="col-12">
                         <button class="btn btn-primary" type="submit">Submit form</button>
                     </div>
