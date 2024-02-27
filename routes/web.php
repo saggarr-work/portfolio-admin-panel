@@ -9,6 +9,7 @@ use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ServiceDetailsController;
+use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -58,6 +59,10 @@ Route::middleware('auth')->group(function () {
     // for portfolio 
     Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio');
     Route::get('/portfolio/show', [PortfolioController::class, 'show'])->name('show.portfolio');
+
+    // for testimonial 
+    Route::get('/testimonial', [TestimonialController::class, 'index'])->name('testimonials');
+    Route::get('/testimonial/show', [TestimonialController::class, 'show'])->name('show.testimonials');
    
 });
 
