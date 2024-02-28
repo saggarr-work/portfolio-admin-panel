@@ -1,7 +1,7 @@
 @extends('backend.master')
 
 @section('title')
-    Show header Info
+    Show Header Info
 @endsection
 
 @section('content')
@@ -11,6 +11,8 @@
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item active">Show Header</li>
             </ol>
+            <div class="text-success">{{ Session('msg') }}</div>
+            <div class="text-danger">{{ Session('error') }}</div>
             <div class="row">
                 <div class="card mb-4">
                     <div class="card-header mt-2">
@@ -18,39 +20,46 @@
                         Showing Header & Footer Info
                     </div>
                     <div class="card-body">
-                        <table id="datatablesSimple">
-                            <thead>
-                                <tr>
-                                    <th>Sl</th>
-                                    <th>Full Name</th>
-                                    <th>Designation</th>
-                                    <th>CV</th>
-                                    <th>Photo</th>
-                                    <th>Github Link</th>
-                                    <th>Facebook Link</th>
-                                    <th>instagram Link</th>
-                                    <th>whatsapp Link</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Sagar Biswas</td>
-                                    <td>Web Developer</td>
-                                    <td>cv.pdf</td>
-                                    <td>img.jpg</td>
-                                    <td>www.github.afsfsdfsdf</td>
-                                    <td>www.facebook.afsfsdfsdf</td>
-                                    <td>www.instagram.afsfsdfsdf</td>
-                                    <td>www.whatsapp.afsfsdfsdf</td>
-                                    <td>
-                                        <button class="btn btn-success">Edit</button>
-                                        <button class="btn btn-danger">Delete</button>
-                                    </td>
-                                </tr>
-                            </tbody>
+                        <table id="" class="table table-hover">
+                            <tr>
+                                <th>Name: </th>
+                                <td>{{ $header->fullName }}</td>
+                            </tr>
+                            <tr>
+                                <th>Designation: </th>
+                                <td>{{ $header->designation }}</td>
+                            </tr>
+                            <tr>
+                                <th>CV: </th>
+                                <td>
+                                    <embed src="{{ asset($header->cv) }}" width="50px" height="50px" alt="header_cv">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Photo: </th>
+                                <td>
+                                    <img src="{{ asset($header->photo) }}" width="50px" height="50px" alt="header_photo">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Github Link: </th>
+                                <td>{{ $header->githubLink }}</td>
+                            </tr>
+                            <tr>
+                                <th>Facebook Link: </th>
+                                <td>{{ $header->facebookLink }}</td>
+                            </tr>
+                            <tr>
+                                <th>Instagram Link: </th>
+                                <td>{{ $header->instagramLink }}</td>
+                            </tr>
+                            <tr>
+                                <th>Whatsapp Link: </th>
+                                <td>{{ $header->whatsappLink }}</td>
+                            </tr>
                         </table>
+                        <a href="{{ route('manage.header') }}" type="button" class="btn btn-primary">Go
+                            Back</a>
                     </div>
                 </div>
             </div>

@@ -38,10 +38,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
+    
     // for header 
     Route::get('/header', [HeaderController::class, 'index'])->name('header');
-    Route::get('/header/show', [HeaderController::class, 'show'])->name('show.header');
+    Route::post('/header', [HeaderController::class, 'add'])->name('add.header');
+    Route::get('/header/manage', [HeaderController::class, 'manage'])->name('manage.header');
+    Route::get('/header/{id}/edit', [HeaderController::class, 'edit'])->name('edit.header');
+    Route::patch('/header/{id}/update', [HeaderController::class, 'update'])->name('update.header');
+    Route::get('/header/{id}/show', [HeaderController::class, 'show'])->name('show.header');
+    Route::post('/header/{id}/delete', [HeaderController::class, 'delete'])->name('delete.header');
 
     // for about 
     Route::get('/about', [AboutController::class, 'index'])->name('about');
