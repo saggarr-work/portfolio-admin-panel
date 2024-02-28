@@ -1,50 +1,51 @@
 @extends('backend.master')
 
 @section('title')
-    Show about Info
+    Show About Info
 @endsection
 
 @section('content')
     <main>
         <div class="container-fluid px-4">
-            <h1 class="mt-4">About</h1>
+            <h1 class="mt-4">Header</h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item active">Show About</li>
             </ol>
+            <div class="text-success">{{ Session('msg') }}</div>
+            <div class="text-danger">{{ Session('error') }}</div>
             <div class="row">
                 <div class="card mb-4">
                     <div class="card-header mt-2">
                         <i class="fas fa-table me-1"></i>
-                        Showing data of about info
+                        Showing About Info
                     </div>
                     <div class="card-body">
-                        <table id="datatablesSimple">
-                            <thead>
-                                <tr>
-                                    <th>Sl</th>
-                                    <th>Experience</th>
-                                    <th>Clients</th>
-                                    <th>Projects</th>
-                                    <th>Photo</th>
-                                    <th>Description</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>3</td>
-                                    <td>500</td>
-                                    <td>61</td>
-                                    <td>img</td>
-                                    <td>fsfafff fsfsfdsf</td>
-                                    <td>
-                                        <button class="btn btn-success">Edit</button>
-                                        <button class="btn btn-danger">Delete</button>
-                                    </td>
-                                </tr>
-                            </tbody>
+                        <table id="" class="table table-hover">
+                            <tr>
+                                <th>Total Years of Experience: </th>
+                                <td>{{ $about->experience }}</td>
+                            </tr>
+                            <tr>
+                                <th>Total Clients: </th>
+                                <td>{{ $about->client }}</td>
+                            </tr>
+                            <tr>
+                                <th>Total Projects: </th>
+                                <td>{{ $about->project }}</td>
+                            </tr>
+                            <tr>
+                                <th>Photo: </th>
+                                <td>
+                                    <img src="{{ asset($about->photo) }}" width="50px" height="50px" alt="about_photo">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Description: </th>
+                                <td>{{ $about->description }}</td>
+                            </tr>
                         </table>
+                        <a href="{{ route('manage.about') }}" type="button" class="btn btn-primary">Go
+                            Back</a>
                     </div>
                 </div>
             </div>

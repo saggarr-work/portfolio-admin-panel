@@ -17,7 +17,7 @@
                 <div class="collapse" id="header" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="{{ route('header') }}">Add Infoes</a>
-                        <a class="nav-link" href="{{ route('manage.header') }}">Show Infoes</a>
+                        <a class="nav-link" href="{{ route('manage.header') }}">Manage Infoes</a>
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#about"
@@ -29,7 +29,7 @@
                 <div class="collapse" id="about" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="{{ route('about') }}">Add About Infoes</a>
-                        <a class="nav-link" href="{{ route('show.about') }}">Show About</a>
+                        <a class="nav-link" href="{{ route('manage.about') }}">Manage About</a>
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#experience"

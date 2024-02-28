@@ -50,7 +50,12 @@ Route::middleware('auth')->group(function () {
 
     // for about 
     Route::get('/about', [AboutController::class, 'index'])->name('about');
-    Route::get('/about/show', [AboutController::class, 'show'])->name('show.about');
+    Route::post('/about', [AboutController::class, 'add'])->name('add.about');
+    Route::get('/about/manage', [AboutController::class, 'manage'])->name('manage.about');
+    Route::get('/about/{id}/edit', [AboutController::class, 'edit'])->name('edit.about');
+    Route::patch('/about/{id}/update', [AboutController::class, 'update'])->name('update.about');
+    Route::get('/about/{id}/show', [AboutController::class, 'show'])->name('show.about');
+    Route::post('/about/{id}/delete', [AboutController::class, 'delete'])->name('delete.about');
 
     // for experience 
     Route::get('/experience', [ExperienceController::class, 'index'])->name('experience');
