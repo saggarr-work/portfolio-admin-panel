@@ -58,7 +58,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/about/{id}/show', [AboutController::class, 'show'])->name('show.about');
     Route::post('/about/{id}/delete', [AboutController::class, 'delete'])->name('delete.about');
 
-    // for experience 
+    // for experience & experience details
     Route::get('/experience', [ExperienceController::class, 'index'])->name('experience');
     Route::post('/experience', [ExperienceController::class, 'add'])->name('add.experience');
     Route::get('/experience/manage', [ExperienceController::class, 'manage'])->name('manage.experience');
@@ -66,6 +66,11 @@ Route::middleware('auth')->group(function () {
     Route::patch('/experience/{id}/update', [ExperienceController::class, 'update'])->name('update.experience');
     Route::post('/experience/{id}/delete', [ExperienceController::class, 'delete'])->name('delete.experience');
     Route::get('/experience/details', [ExperienceDteailsController::class, 'index'])->name('details.experience');
+    Route::post('/experience/details', [ExperienceDteailsController::class, 'add'])->name('add.details.experience');
+    Route::get('/experience/details/manage', [ExperienceDteailsController::class, 'manage'])->name('manage.details.experience');
+    Route::get('/experience/details/{id}/edit', [ExperienceDteailsController::class, 'edit'])->name('edit.details.experience');
+    Route::patch('/experience/details/{id}/update', [ExperienceDteailsController::class, 'update'])->name('update.details.experience');
+    Route::post('/experience/details/{id}/delete', [ExperienceDteailsController::class, 'delete'])->name('delete.details.experience');
 
     // for services
     Route::get('/services', [ServiceController::class, 'index'])->name('services');

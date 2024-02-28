@@ -43,7 +43,7 @@
                         <a class="nav-link" href="{{ route('experience') }}">Add Experience</a>
                         <a class="nav-link" href="{{ route('manage.experience') }}">Manage Experience</a>
                         <a class="nav-link" href="{{ route('details.experience') }}">Add Details</a>
-                        <a class="nav-link" href="{{ route('manage.experience') }}">Manage Details</a>
+                        <a class="nav-link" href="{{ route('manage.details.experience') }}">Manage Details</a>
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#services"

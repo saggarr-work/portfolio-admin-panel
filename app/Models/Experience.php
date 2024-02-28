@@ -22,6 +22,11 @@ class Experience extends Model
     }
     public static function deleteExperience($id){
         self::$experience = Experience::find($id);
+        self::$experience->experienceDetails()->delete();
         self::$experience->delete();
+    }
+
+    public function experienceDetails(){
+        return $this->hasMany(ExperienceDteails::class);
     }
 }
