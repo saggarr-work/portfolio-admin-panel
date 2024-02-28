@@ -11,6 +11,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ServiceDetailsController;
 use App\Http\Controllers\TestimonialController;
+use App\Models\Experience;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -59,7 +60,11 @@ Route::middleware('auth')->group(function () {
 
     // for experience 
     Route::get('/experience', [ExperienceController::class, 'index'])->name('experience');
-    Route::get('/experience/show', [ExperienceController::class, 'show'])->name('show.experience');
+    Route::post('/experience', [ExperienceController::class, 'add'])->name('add.experience');
+    Route::get('/experience/manage', [ExperienceController::class, 'manage'])->name('manage.experience');
+    Route::get('/experience/{id}/edit', [ExperienceController::class, 'edit'])->name('edit.experience');
+    Route::patch('/experience/{id}/update', [ExperienceController::class, 'update'])->name('update.experience');
+    Route::post('/experience/{id}/delete', [ExperienceController::class, 'delete'])->name('delete.experience');
     Route::get('/experience/details', [ExperienceDteailsController::class, 'index'])->name('details.experience');
 
     // for services

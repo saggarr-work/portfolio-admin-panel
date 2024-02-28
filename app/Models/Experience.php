@@ -8,4 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class Experience extends Model
 {
     use HasFactory;
+    private static $experience;
+
+    public static function newExperience($request){
+        self::$experience = new Experience();
+        self::$experience->fieldOfExperience = $request->fieldOfExperience;
+        self::$experience->save();
+    }
+    public static function updateExperience($request, $id){
+        self::$experience = Experience::find($id);
+        self::$experience->fieldOfExperience = $request->fieldOfExperience;
+        self::$experience->save();
+    }
+    public static function deleteExperience($id){
+        self::$experience = Experience::find($id);
+        self::$experience->delete();
+    }
 }
