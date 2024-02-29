@@ -70,7 +70,7 @@
                     data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="{{ route('portfolio') }}">Add Portfolio</a>
-                        <a class="nav-link" href="{{ route('show.portfolio') }}">Show Portfolio</a>
+                        <a class="nav-link" href="{{ route('manage.portfolio') }}">Manage Portfolio</a>
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"

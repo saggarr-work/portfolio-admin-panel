@@ -11,7 +11,6 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ServiceDetailsController;
 use App\Http\Controllers\TestimonialController;
-use App\Models\Experience;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -89,7 +88,12 @@ Route::middleware('auth')->group(function () {
 
     // for portfolio 
     Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio');
-    Route::get('/portfolio/show', [PortfolioController::class, 'show'])->name('show.portfolio');
+    Route::post('/portfolio', [PortfolioController::class, 'add'])->name('add.portfolio');
+    Route::get('/portfolio/manage', [PortfolioController::class, 'manage'])->name('manage.portfolio');
+    Route::get('/portfolio/{id}/edit', [PortfolioController::class, 'edit'])->name('edit.portfolio');
+    Route::patch('/portfolio/{id}/update', [PortfolioController::class, 'update'])->name('update.portfolio');
+    Route::get('/portfolio/{id}/show', [PortfolioController::class, 'show'])->name('show.portfolio');
+    Route::post('/portfolio/{id}/delete', [PortfolioController::class, 'delete'])->name('delete.portfolio');
 
     // for testimonial 
     Route::get('/testimonial', [TestimonialController::class, 'index'])->name('testimonials');

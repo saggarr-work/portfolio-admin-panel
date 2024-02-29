@@ -15,12 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('fullName');
             $table->string('designation');
-            $table->string('cv');
-            $table->string('photo');
-            $table->string('githubLink');
-            $table->string('facebookLink');
-            $table->string('instagramLink');
-            $table->string('whatsappLink');
+            $table->text('cv');
+            $table->text('photo');
+            $table->text('githubLink');
+            $table->text('facebookLink');
+            $table->text('instagramLink');
+            $table->text('whatsappLink');
             $table->timestamps();
         });
     }
