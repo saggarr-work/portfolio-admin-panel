@@ -82,8 +82,8 @@
                 <div class="collapse" id="testimonials" aria-labelledby="headingOne"
                     data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{ route('testimonials') }}">Add Testimonial</a>
-                        <a class="nav-link" href="{{ route('show.testimonials') }}">Show Testimonials</a>
+                        <a class="nav-link" href="{{ route('testimonial') }}">Add Testimonial</a>
+                        <a class="nav-link" href="{{ route('manage.testimonial') }}">Manage Testimonials</a>
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#contact"

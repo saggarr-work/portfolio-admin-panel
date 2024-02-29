@@ -96,8 +96,13 @@ Route::middleware('auth')->group(function () {
     Route::post('/portfolio/{id}/delete', [PortfolioController::class, 'delete'])->name('delete.portfolio');
 
     // for testimonial 
-    Route::get('/testimonial', [TestimonialController::class, 'index'])->name('testimonials');
-    Route::get('/testimonial/show', [TestimonialController::class, 'show'])->name('show.testimonials');
+    Route::get('/testimonial', [TestimonialController::class, 'index'])->name('testimonial');
+    Route::post('/testimonial', [TestimonialController::class, 'add'])->name('add.testimonial');
+    Route::get('/testimonial/manage', [TestimonialController::class, 'manage'])->name('manage.testimonial');
+    Route::get('/testimonial/{id}/edit', [TestimonialController::class, 'edit'])->name('edit.testimonial');
+    Route::patch('/testimonial/{id}/update', [TestimonialController::class, 'update'])->name('update.testimonial');
+    Route::get('/testimonial/{id}/show', [TestimonialController::class, 'show'])->name('show.testimonial');
+    Route::post('/testimonial/{id}/delete', [TestimonialController::class, 'delete'])->name('delete.testimonial');
 
     // for contact 
     Route::get('/contact', [ContactController::class, 'index'])->name('contact');
