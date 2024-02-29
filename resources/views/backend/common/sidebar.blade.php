@@ -54,9 +54,10 @@
                 </a>
                 <div class="collapse" id="services" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{ route('services') }}">Add Service</a>
+                        <a class="nav-link" href="{{ route('service') }}">Add Service</a>
+                        <a class="nav-link" href="{{ route('manage.service') }}">Manage Service</a>
                         <a class="nav-link" href="{{ route('details.service') }}">Add Details</a>
-                        <a class="nav-link" href="{{ route('show.services') }}">Show Service</a>
+                        <a class="nav-link" href="{{ route('manage.service') }}">Manage Details</a>
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#portfolio"

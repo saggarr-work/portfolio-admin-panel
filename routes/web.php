@@ -73,8 +73,12 @@ Route::middleware('auth')->group(function () {
     Route::post('/experience/details/{id}/delete', [ExperienceDteailsController::class, 'delete'])->name('delete.details.experience');
 
     // for services
-    Route::get('/services', [ServiceController::class, 'index'])->name('services');
-    Route::get('/services/show', [ServiceController::class, 'show'])->name('show.services'); 
+    Route::get('/service', [ServiceController::class, 'index'])->name('service');
+    Route::post('/service', [ServiceController::class, 'add'])->name('add.service');
+    Route::get('/service/manage', [ServiceController::class, 'manage'])->name('manage.service'); 
+    Route::get('/service/{id}/edit', [ServiceController::class, 'edit'])->name('edit.service');
+    Route::patch('/service/{id}/update', [ServiceController::class, 'update'])->name('update.service');
+    Route::post('/service/{id}/delete', [ServiceController::class, 'delete'])->name('delete.service');
     Route::get('/service/details', [ServiceDetailsController::class, 'index'])->name('details.service');
 
     // for portfolio 
