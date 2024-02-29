@@ -96,7 +96,7 @@
                     data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="{{ route('contact') }}">Add Contact</a>
-                        <a class="nav-link" href="{{ route('show.contact') }}">Show Contact</a>
+                        <a class="nav-link" href="{{ route('manage.contact') }}">Manage Contact</a>
                     </nav>
                 </div>
                 {{-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"

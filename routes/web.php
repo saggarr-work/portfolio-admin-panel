@@ -106,7 +106,12 @@ Route::middleware('auth')->group(function () {
 
     // for contact 
     Route::get('/contact', [ContactController::class, 'index'])->name('contact');
-    Route::get('/contact/show', [ContactController::class, 'show'])->name('show.contact');
+    Route::post('/contact', [ContactController::class, 'add'])->name('add.contact');
+    Route::get('/contact/manage', [ContactController::class, 'manage'])->name('manage.contact');
+    Route::get('/contact/{id}/edit', [ContactController::class, 'edit'])->name('edit.contact');
+    Route::patch('/contact/{id}/update', [ContactController::class, 'update'])->name('update.contact');
+    Route::get('/contact/{id}/show', [ContactController::class, 'show'])->name('show.contact');
+    Route::post('/contact/{id}/delete', [ContactController::class, 'delete'])->name('delete.contact');
    
 });
 
