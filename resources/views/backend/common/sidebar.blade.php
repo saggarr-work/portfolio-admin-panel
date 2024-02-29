@@ -57,7 +57,7 @@
                         <a class="nav-link" href="{{ route('service') }}">Add Service</a>
                         <a class="nav-link" href="{{ route('manage.service') }}">Manage Service</a>
                         <a class="nav-link" href="{{ route('details.service') }}">Add Details</a>
-                        <a class="nav-link" href="{{ route('manage.service') }}">Manage Details</a>
+                        <a class="nav-link" href="{{ route('manage.details.service') }}">Manage Details</a>
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#portfolio"

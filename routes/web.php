@@ -80,6 +80,12 @@ Route::middleware('auth')->group(function () {
     Route::patch('/service/{id}/update', [ServiceController::class, 'update'])->name('update.service');
     Route::post('/service/{id}/delete', [ServiceController::class, 'delete'])->name('delete.service');
     Route::get('/service/details', [ServiceDetailsController::class, 'index'])->name('details.service');
+    Route::post('/service/details', [ServiceDetailsController::class, 'add'])->name('add.details.service');
+    Route::get('/service/details/manage', [ServiceDetailsController::class, 'manage'])->name('manage.details.service');
+    Route::get('/service/details/{id}/edit', [ServiceDetailsController::class, 'edit'])->name('edit.details.service');
+    Route::Patch('/service/details/{id}/update', [ServiceDetailsController::class, 'update'])->name('update.details.service');
+    Route::get('/service/details/{id}/show', [ServiceDetailsController::class, 'show'])->name('show.details.service');
+    Route::post('/service/details/{id}/delete', [ServiceDetailsController::class, 'delete'])->name('delete.details.service');
 
     // for portfolio 
     Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio');
