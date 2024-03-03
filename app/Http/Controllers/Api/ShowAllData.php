@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\About;
 use App\Models\Contact;
+use App\Models\Experience;
 use App\Models\ExperienceDteails;
 use App\Models\Header;
 use App\Models\Portfolio;
+use App\Models\Service;
 use App\Models\ServiceDetails;
 use App\Models\Testimonial;
 
@@ -27,6 +29,14 @@ class ShowAllData extends Controller
         $data = [
             'status' => 200,
             'contact' => $contact
+        ];
+        return response()->json($data, 200);
+    }
+    public function showExperience(){
+        $experience = Experience::all();
+        $data = [
+            'status' => 200,
+            'experience' => $experience
         ];
         return response()->json($data, 200);
     }
@@ -51,6 +61,14 @@ class ShowAllData extends Controller
         $data = [
             'status' => 200,
             'portfolio' => $portfolio
+        ];
+        return response()->json($data, 200);
+    }
+    public function showService(){
+        $service = Service::all();
+        $data = [
+            'status' => 200,
+            'service' => $service
         ];
         return response()->json($data, 200);
     }

@@ -23,8 +23,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // public routes 
 Route::get('/about', [ShowAllData::class, 'showAbout']);
 Route::get('/contact', [ShowAllData::class, 'showContact']);
+Route::get('/experience', [ShowAllData::class, 'showExperience']);
 Route::get('/details/experience', [ShowAllData::class, 'showExperienceDetails']);
 Route::get('/header', [ShowAllData::class, 'showHeader']);
 Route::get('/portfolio', [ShowAllData::class, 'showPortfolio']);
+Route::get('/service', [ShowAllData::class, 'showService']);
 Route::get('/details/service', [ShowAllData::class, 'showServiceDetails']);
 Route::get('/testimonial', [ShowAllData::class, 'showTestimonial']);
