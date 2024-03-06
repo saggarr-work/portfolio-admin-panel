@@ -24,7 +24,7 @@
                             <thead>
                                 <tr>
                                     <th>Sl</th>
-                                    <th>Experience</th>
+                                    <th>Field of Experience</th>
                                     <th>Language or Tool</th>
                                     <th>Level of Experience</th>
                                     <th>Actions</th>

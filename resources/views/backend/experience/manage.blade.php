@@ -24,7 +24,7 @@
                             <thead>
                                 <tr>
                                     <th>Sl</th>
-                                    <th>Experience</th>
+                                    <th>Field of Experience</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>

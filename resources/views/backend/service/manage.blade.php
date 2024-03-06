@@ -24,7 +24,7 @@
                             <thead>
                                 <tr>
                                     <th>Sl</th>
-                                    <th>Service</th>
+                                    <th>Field of Service</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
