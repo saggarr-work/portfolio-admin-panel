@@ -1,18 +1,18 @@
 @extends('backend.master')
 
 @section('title')
-    Show Header Info
+    Show Header
 @endsection
 
 @section('content')
     <main>
         <div class="container-fluid px-4">
-            <h1 class="mt-4">Header</h1>
+            <h1 class="mt-4">Header/Footer</h1>
             <ol class="breadcrumb mb-4">
-                <li class="breadcrumb-item active">Show Header</li>
+                <li class="breadcrumb-item active">Show Infoes</li>
             </ol>
-            <div class="text-success">{{ Session('msg') }}</div>
-            <div class="text-danger">{{ Session('error') }}</div>
+            <div class="text-success text-center">{{ Session('msg') }}</div>
+            <div class="text-danger text-center">{{ Session('error') }}</div>
             <div class="row">
                 <div class="card mb-4">
                     <div class="card-header mt-2">
@@ -58,7 +58,7 @@
                                 <td>{{ $header->whatsappLink }}</td>
                             </tr>
                         </table>
-                        <a href="{{ route('manage.header') }}" type="button" class="btn btn-primary">Go
+                        <a href="{{ route('manage.header') }}" type="button" class="btn btn-success">Go
                             Back</a>
                     </div>
                 </div>

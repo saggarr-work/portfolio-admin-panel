@@ -1,7 +1,7 @@
 @extends('backend.master')
 
 @section('title')
-    Edit Experience Infoes
+    Edit Experience
 @endsection
 
 @section('content')
@@ -11,8 +11,8 @@
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item active">Edit Experience</li>
             </ol>
-            <div class="text-success">{{ Session('msg') }}</div>
-            <div class="text-danger">{{ Session('error') }}</div>
+            <div class="text-success text-center">{{ Session('msg') }}</div>
+            <div class="text-danger text-center">{{ Session('error') }}</div>
             <div class="row">
                 <form class="row g-3" action="{{ route('update.experience', ['id' => $experience->id]) }}" method="POST">
                     @csrf
@@ -24,6 +24,7 @@
                     </div>
                     <div class="col-12">
                         <button class="btn btn-primary" type="submit">Submit form</button>
+                        <a class="btn btn-danger" href="{{ route('manage.experience') }}">Cancel</a>
                     </div>
                 </form>
             </div>

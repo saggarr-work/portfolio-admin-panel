@@ -1,7 +1,7 @@
 @extends('backend.master')
 
 @section('title')
-    Show Portfolio Info
+    Show Portfolio
 @endsection
 
 @section('content')
@@ -11,8 +11,8 @@
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item active">Show Portfolio</li>
             </ol>
-            <div class="text-success">{{ Session('msg') }}</div>
-            <div class="text-danger">{{ Session('error') }}</div>
+            <div class="text-success text-center">{{ Session('msg') }}</div>
+            <div class="text-danger text-center">{{ Session('error') }}</div>
             <div class="row">
                 <div class="card mb-4">
                     <div class="card-header mt-2">
@@ -21,10 +21,6 @@
                     </div>
                     <div class="card-body">
                         <table id="" class="table table-hover">
-                            <tr>
-                                <th>SL: </th>
-                                <td>{{ $portfolio->id }}</td>
-                            </tr>
                             <tr>
                                 <th>Thumbnail: </th>
                                 <td>
@@ -45,7 +41,7 @@
                                 <td>{{ $portfolio->liveDemo }}</td>
                             </tr>
                         </table>
-                        <a href="{{ route('manage.portfolio') }}" type="button" class="btn btn-primary">Go
+                        <a href="{{ route('manage.portfolio') }}" type="button" class="btn btn-success">Go
                             Back</a>
                     </div>
                 </div>

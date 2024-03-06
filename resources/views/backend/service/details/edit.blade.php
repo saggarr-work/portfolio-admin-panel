@@ -11,8 +11,8 @@
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item active">Edit Service Details</li>
             </ol>
-            <div class="text-success">{{ Session('msg') }}</div>
-            <div class="text-danger">{{ Session('error') }}</div>
+            <div class="text-success text-center">{{ Session('msg') }}</div>
+            <div class="text-danger text-center">{{ Session('error') }}</div>
             <div class="row">
                 <form class="row g-3" action="{{route('update.details.service', ['id' => $serviceDetail->id])}}" method="POST">
                     @csrf
@@ -35,7 +35,8 @@
                         <textarea class="form-control" name="description" placeholder="Write some words about given service" id="details" style="height: 100px">{{$serviceDetail->description}}</textarea>
                     </div>
                     <div class="col-12">
-                        <button class="btn btn-primary" type="submit">Submit form</button>
+                        <button class="btn btn-primary" type="submit">Update Service Details</button>
+                        <a class="btn btn-danger" href="{{ route('manage.details.service') }}">Cancel</a>
                     </div>
                 </form>
             </div>

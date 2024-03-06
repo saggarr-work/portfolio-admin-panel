@@ -1,7 +1,7 @@
 @extends('backend.master')
 
 @section('title')
-    Edit Header Infoes
+    Edit Header
 @endsection
 
 @section('content')
@@ -9,10 +9,10 @@
         <div class="container-fluid px-4">
             <h1 class="mt-4">Header</h1>
             <ol class="breadcrumb mb-4">
-                <li class="breadcrumb-item active">Edit Header</li>
+                <li class="breadcrumb-item active">Edit Infoes</li>
             </ol>
-            <div class="text-success">{{ Session('msg') }}</div>
-            <div class="text-danger">{{ Session('error') }}</div>
+            <div class="text-success text-center">{{ Session('msg') }}</div>
+            <div class="text-danger text-center">{{ Session('error') }}</div>
             <div class="row">
                 <form class="row g-3" action="{{ route('update.header', ['id' => $header->id]) }}" method="POST"
                     enctype="multipart/form-data">
@@ -32,7 +32,7 @@
                         <label for="cv" class="form-label">Upload CV</label>
                         <input type="file" name="cv" accept="application/pdf" class="form-control" id="cv"
                             value="">
-                        <div class="col-md-12">
+                        <div class="col-md-12 mt-2">
                             <embed src="{{ asset($header->cv) }}" width="50px" height="50px" type="">
                         </div>
                     </div>
@@ -40,9 +40,8 @@
                         <label for="photo" class="form-label">Upload Header Photo</label>
                         <input type="file" name="photo" accept="image/*" class="form-control" id="photo"
                             value="">
-                        <div class="col-md-12">
+                        <div class="col-md-12  mt-2">
                             <img src="{{ asset($header->photo) }}" width="50px" height="50px" alt="header_photo">
-                            <p>{{ $header->photo }}</p>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -68,6 +67,7 @@
 
                     <div class="col-12">
                         <button class="btn btn-primary" type="submit">Update Header</button>
+                        <a class="btn btn-danger" href="{{ route('manage.header') }}">Cancel</a>
                     </div>
                 </form>
             </div>

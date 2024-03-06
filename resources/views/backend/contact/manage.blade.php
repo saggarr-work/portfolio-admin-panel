@@ -1,7 +1,7 @@
 @extends('backend.master')
 
 @section('title')
-    Show Contact Info
+    Show Contact
 @endsection
 
 @section('content')
@@ -11,9 +11,9 @@
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item active">Manage Contact</li>
             </ol>
-            <div class="text-success">{{ Session('msg') }}</div>
-            <div class="text-danger">{{ Session('error') }}</div>
-            <div class="row">
+            <div class="text-success text-center">{{ Session('msg') }}</div>
+            <div class="text-danger text-center">{{ Session('error') }}</div>
+            <div class="row mt-3">
                 <div class="card mb-4">
                     <div class="card-header mt-2">
                         <i class="fas fa-table me-1"></i>
@@ -23,7 +23,6 @@
                         <table id="datatablesSimple">
                             <thead>
                                 <tr>
-                                    <th>Sl</th>
                                     <th>Email Address</th>
                                     <th>Direct Email</th>
                                     <th>Messenger Username</th>
@@ -36,20 +35,31 @@
                             <tbody>
                                 @foreach ($contacts as $contact)
                                     <tr>
-                                        <td>{{$loop->iteration}}</td>
-                                        <td>{{$contact->emailUsername}}</td>
-                                        <td>{{$contact->directEmailLink}}</td>
-                                        <td>{{$contact->messengerUsername}}</td>
-                                        <td>{{$contact->directMessengerLink}}</td>
-                                        <td>{{$contact->whatsappUsername}}</td>
-                                        <td>{{$contact->directWhatsappLink}}</td>
+                                        <td>{{ substr($contact->emailUsername, 0, 5) }}...</td>
                                         <td>
-                                            <a class="btn btn-success" href="{{route('edit.contact', ['id' => $contact->id])}}">Edit</a>
-                                            <a class="btn btn-primary" href="{{route('show.contact', ['id' => $contact->id])}}">View</a>
-                                            <form action="{{route('delete.contact', ['id' => $contact->id])}}" method="POST">
-                                                @csrf
-                                                <button class="btn btn-danger">Delete</button>
-                                            </form>
+                                            <a href="{{$contact->directEmailLink}}" target="blank">{{ substr($contact->directEmailLink, 0, 5) }}...</a>
+                                        </td>
+                                        <td>{{ substr($contact->messengerUsername, 0, 5) }}...</td>
+                                        <td>
+                                            <a href="{{$contact->directMessengerLink}}" target="blank">{{ substr($contact->directMessengerLink,0,5) }}...</a>
+                                        </td>
+                                        <td>{{ substr($contact->whatsappUsername,0,5) }}...</td>
+                                        <td>
+                                            <a href="{{$contact->directWhatsappLink}}" target="blank">{{ substr($contact->directWhatsappLink,0,5) }}...</a>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <a class="btn btn-success"
+                                                    href="{{ route('edit.contact', ['id' => $contact->id]) }}">Edit</a>
+                                                <a class="btn btn-primary ms-2"
+                                                    href="{{ route('show.contact', ['id' => $contact->id]) }}">View</a>
+                                                <form action="{{ route('delete.contact', ['id' => $contact->id]) }}"
+                                                    method="POST">
+                                                    @csrf
+                                                    <button class="btn btn-danger ms-2"
+                                                        onclick="return confirm('Delete this contact ?')">Delete</button>
+                                                </form>
+                                            </div>
                                         </td>
                                     </tr>
                                 @endforeach

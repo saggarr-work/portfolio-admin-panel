@@ -9,11 +9,11 @@
         <div class="container-fluid px-4">
             <h1 class="mt-4">Experience</h1>
             <ol class="breadcrumb mb-4">
-                <li class="breadcrumb-item active">Manage Experience</li>
+                <li class="breadcrumb-item active">Manage Experience Details</li>
             </ol>
-            <div class="text-success">{{ Session('msg') }}</div>
-            <div class="text-danger">{{ Session('error') }}</div>
-            <div class="row">
+            <div class="text-success text-center">{{ Session('msg') }}</div>
+            <div class="text-danger text-center">{{ Session('error') }}</div>
+            <div class="row mt-3">
                 <div class="card mb-4">
                     <div class="card-header mt-2">
                         <i class="fas fa-table me-1"></i>
@@ -38,11 +38,16 @@
                                         <td>{{ $experienceDetails->languageOrTools }}</td>
                                         <td>{{ $experienceDetails->levelOfExperience }}</td>
                                         <td>
-                                            <a class="btn btn-success" href="{{route('edit.details.experience', ['id' => $experienceDetails->id])}}">Edit</a>
-                                            <form action="{{route('delete.details.experience', ['id' => $experienceDetails->id])}}" method="POST">
-                                                @csrf
-                                                <button class="btn btn-danger">Delete</button>
-                                            </form>
+                                            <div class="d-flex">
+                                                <a class="btn btn-success"
+                                                    href="{{ route('edit.details.experience', ['id' => $experienceDetails->id]) }}">Edit</a>
+                                                <form
+                                                    action="{{ route('delete.details.experience', ['id' => $experienceDetails->id]) }}"
+                                                    method="POST">
+                                                    @csrf
+                                                    <button class="btn btn-danger ms-2" onclick="return confirm('Delete this detail ?')">Delete</button>
+                                                </form>
+                                            </div>
                                         </td>
                                     </tr>
                                 @endforeach

@@ -1,19 +1,19 @@
 @extends('backend.master')
 
 @section('title')
-    Manage testimonials
+    Manage Testimonial
 @endsection
 
 @section('content')
     <main>
         <div class="container-fluid px-4">
-            <h1 class="mt-4">Testimonials</h1>
+            <h1 class="mt-4">Testimonial</h1>
             <ol class="breadcrumb mb-4">
-                <li class="breadcrumb-item active">Manage testimonials</li>
+                <li class="breadcrumb-item active">Manage Testimonial</li>
             </ol>
-            <div class="text-success">{{ Session('msg') }}</div>
-            <div class="text-danger">{{ Session('error') }}</div>
-            <div class="row">
+            <div class="text-success text-center">{{ Session('msg') }}</div>
+            <div class="text-danger text-center">{{ Session('error') }}</div>
+            <div class="row mt-3">
                 <div class="card mb-4">
                     <div class="card-header mt-2">
                         <i class="fas fa-table me-1"></i>
@@ -41,18 +41,20 @@
                                         </td>
                                         <td>{{ substr($testimonial->review, 0, 10) }}...</td>
                                         <td>
-                                            <a class="btn btn-success"
-                                                href="{{ route('edit.testimonial', ['id' => $testimonial->id]) }}">Edit</a>
-                                            <a class="btn btn-primary"
-                                                href="{{ route('show.testimonial', ['id' => $testimonial->id]) }}">view</a>
-                                            <form action="{{route('delete.testimonial', ['id' => $testimonial->id])}}" method="POST">
-                                                @csrf
-                                                <button class="btn btn-danger">Delete</button>
-                                            </form>
+                                            <div class="d-flex">
+                                                <a class="btn btn-success"
+                                                    href="{{ route('edit.testimonial', ['id' => $testimonial->id]) }}">Edit</a>
+                                                <a class="btn btn-primary ms-2"
+                                                    href="{{ route('show.testimonial', ['id' => $testimonial->id]) }}">view</a>
+                                                <form action="{{ route('delete.testimonial', ['id' => $testimonial->id]) }}"
+                                                    method="POST">
+                                                    @csrf
+                                                    <button class="btn btn-danger ms-2" onclick="return confirm('Delete this testimonial ?')">Delete</button>
+                                                </form>
+                                            </div>
                                         </td>
                                     </tr>
                                 @endforeach
-
                             </tbody>
                         </table>
                     </div>

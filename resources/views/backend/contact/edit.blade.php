@@ -11,8 +11,8 @@
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item active">Edit Contact</li>
             </ol>
-            <div class="text-success">{{ Session('msg') }}</div>
-            <div class="text-danger">{{ Session('error') }}</div>
+            <div class="text-success text-center">{{ Session('msg') }}</div>
+            <div class="text-danger text-center">{{ Session('error') }}</div>
             <div class="row">
                 <form class="row g-3" action="{{route('update.contact', ['id' => $contact->id])}}" method="POST">
                     @csrf
@@ -44,7 +44,8 @@
                         <input type="text" name="directWhatsappLink" class="form-control" id="whatsapp_direct" value="{{$contact->directWhatsappLink}}" required>
                     </div>
                     <div class="col-12">
-                        <button class="btn btn-primary" type="submit">Submit form</button>
+                        <button class="btn btn-primary" type="submit">Update Contact</button>
+                        <a class="btn btn-danger" href="{{ route('manage.contact') }}">Cancel</a>
                     </div>
                 </form>
             </div>

@@ -11,8 +11,8 @@
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item active">Show About</li>
             </ol>
-            <div class="text-success">{{ Session('msg') }}</div>
-            <div class="text-danger">{{ Session('error') }}</div>
+            <div class="text-success text-center">{{ Session('msg') }}</div>
+            <div class="text-danger text-center">{{ Session('error') }}</div>
             <div class="row">
                 <div class="card mb-4">
                     <div class="card-header mt-2">
@@ -23,15 +23,15 @@
                         <table id="" class="table table-hover">
                             <tr>
                                 <th>Total Years of Experience: </th>
-                                <td>{{ $about->experience }}</td>
+                                <td>{{ $about->experience }} Years</td>
                             </tr>
                             <tr>
                                 <th>Total Clients: </th>
-                                <td>{{ $about->client }}</td>
+                                <td>{{ $about->client }} Clients</td>
                             </tr>
                             <tr>
                                 <th>Total Projects: </th>
-                                <td>{{ $about->project }}</td>
+                                <td>{{ $about->project }} Projects</td>
                             </tr>
                             <tr>
                                 <th>Photo: </th>
@@ -44,7 +44,7 @@
                                 <td>{{ $about->description }}</td>
                             </tr>
                         </table>
-                        <a href="{{ route('manage.about') }}" type="button" class="btn btn-primary">Go
+                        <a href="{{ route('manage.about') }}" type="button" class="btn btn-success">Go
                             Back</a>
                     </div>
                 </div>
