@@ -35,7 +35,7 @@
                             </tr>
                             <tr>
                                 <th>Description: </th>
-                                <td>{{ $serviceDetail->description }}</td>
+                                <td>{!! $serviceDetail->description !!}</td>
                             </tr>
                         </table>
                         <a href="{{ route('manage.details.service') }}" type="button" class="btn btn-success">Go

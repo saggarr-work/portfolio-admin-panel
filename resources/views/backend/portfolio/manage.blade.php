@@ -39,7 +39,7 @@
                                             <img src="{{ asset($portfolio->thumbnail) }}" height="50px" width="50px"
                                                 alt="portfolio_thumbnail">
                                         </td>
-                                        <td>{{ substr($portfolio->title, 0, 10) }}...</td>
+                                        <td>{!! substr($portfolio->title, 0, 10) !!}...</td>
                                         <td>{{ $portfolio->githubLink }}</td>
                                         <td>{{ $portfolio->liveDemo }}</td>
                                         <td>

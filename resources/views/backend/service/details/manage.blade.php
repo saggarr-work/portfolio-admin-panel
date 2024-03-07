@@ -36,7 +36,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $serviceDetail->service->fieldOfService }}</td>
                                         <td>{{ $serviceDetail->heading }}</td>
-                                        <td>{{ substr($serviceDetail->description, 0, 10) }}...</td>
+                                        <td>{!! substr($serviceDetail->description, 0, 10) !!}...</td>
                                         <td>
                                             <div class="d-flex">
                                                 <a class="btn btn-success"

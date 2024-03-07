@@ -39,7 +39,7 @@
                     <div class="col-md-12">
                         <label for="about_description" class="form-label">About Description</label><span class="text-danger"><b> *
                         </b></span>
-                        <textarea class="form-control" name="description" placeholder="Write some words about you, what you do, your profession..." id="about_description" style="height: 100px"></textarea>
+                        <textarea class="form-control" name="description" placeholder="Write some words about you, what you do, your profession..." id="summernote" style="height: 100px"></textarea>
                     </div>
                     <div class="col-12">
                         <button class="btn btn-primary" type="submit">Add About</button>

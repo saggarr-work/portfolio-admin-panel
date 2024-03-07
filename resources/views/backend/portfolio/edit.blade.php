@@ -26,7 +26,7 @@
                     </div>
                     <div class="col-md-12">
                         <label for="title" class="form-label">Title</label>
-                        <textarea class="form-control" name="title" placeholder="Write some words about the project" id="title" style="height: 100px" required>{{$portfolio->title}}</textarea>
+                        <textarea class="form-control" name="title" id="summernote" required>{{$portfolio->title}}</textarea>
                     </div>
                     <div class="col-md-6">
                         <label for="github_link" class="form-label">Github Link</label>

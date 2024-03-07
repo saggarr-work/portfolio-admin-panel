@@ -14,22 +14,26 @@
             <div class="text-success text-center">{{ Session('msg') }}</div>
             <div class="text-danger text-center">{{ Session('error') }}</div>
             <div class="row">
-                <form class="row g-3" action="{{route('add.portfolio')}}" method="POST" enctype="multipart/form-data">
+                <form class="row g-3" action="{{ route('add.portfolio') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="col-md-6">
                         <label for="thumbnail" class="form-label">Image</label><span class="text-danger"><b> * </b></span>
-                        <input type="file" name="thumbnail" class="form-control" accept="image/*" id="thumbnail" value="" required>
+                        <input type="file" name="thumbnail" class="form-control" accept="image/*" id="thumbnail"
+                            value="" required>
                     </div>
                     <div class="col-md-12">
                         <label for="title" class="form-label">Title</label><span class="text-danger"><b> * </b></span>
-                        <textarea class="form-control" name="title" placeholder="Write some words about the project" id="title" style="height: 100px" required></textarea>
+                        <textarea class="form-control" name="title" id="summernote" required></textarea>
                     </div>
                     <div class="col-md-6">
-                        <label for="github_link" class="form-label">Github Link</label><span class="text-danger"><b> * </b></span>
-                        <input type="text" name="githubLink" class="form-control" id="github_link" value="" required>
+                        <label for="github_link" class="form-label">Github Link</label><span class="text-danger"><b> *
+                            </b></span>
+                        <input type="text" name="githubLink" class="form-control" id="github_link" value=""
+                            required>
                     </div>
                     <div class="col-md-6">
-                        <label for="live_demo" class="form-label">Live Demo</label><span class="text-danger"><b> * </b></span>
+                        <label for="live_demo" class="form-label">Live Demo</label><span class="text-danger"><b> *
+                            </b></span>
                         <input type="text" name="liveDemo" class="form-control" id="live_demo" value="" required>
                     </div>
                     <div class="col-12">

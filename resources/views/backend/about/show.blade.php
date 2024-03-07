@@ -41,7 +41,7 @@
                             </tr>
                             <tr>
                                 <th>Description: </th>
-                                <td>{{ $about->description }}</td>
+                                <td>{!! $about->description !!}</td>
                             </tr>
                         </table>
                         <a href="{{ route('manage.about') }}" type="button" class="btn btn-success">Go

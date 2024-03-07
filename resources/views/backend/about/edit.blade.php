@@ -43,7 +43,7 @@
                     <div class="col-md-12">
                         <label for="about_description" class="form-label">About Description</label>
                         <textarea class="form-control" name="description" placeholder="Write some words about you, what you do, your profession"
-                            id="about_description" style="height: 100px">{{ $about->description }}</textarea>
+                            id="summernote" style="height: 100px">{{ $about->description }}</textarea>
                     </div>
                     <div class="col-12">
                         <button class="btn btn-primary" type="submit">Update About</button>

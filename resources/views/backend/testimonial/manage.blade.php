@@ -39,7 +39,7 @@
                                             <img src="{{ asset($testimonial->avatar) }}" height="50px" width="50px"
                                                 alt="testimonial_avatar">
                                         </td>
-                                        <td>{{ substr($testimonial->review, 0, 10) }}...</td>
+                                        <td>{!! substr($testimonial->review, 0, 10) !!}...</td>
                                         <td>
                                             <div class="d-flex">
                                                 <a class="btn btn-success"

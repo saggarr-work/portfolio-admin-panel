@@ -32,7 +32,7 @@
                     </div>
                     <div class="col-md-12">
                         <label for="details" class="form-label">Description</label>
-                        <textarea class="form-control" name="description" placeholder="Write some words about given service" id="details" style="height: 100px">{{$serviceDetail->description}}</textarea>
+                        <textarea class="form-control" name="description" id="summernote">{{$serviceDetail->description}}</textarea>
                     </div>
                     <div class="col-12">
                         <button class="btn btn-primary" type="submit">Update Service Details</button>

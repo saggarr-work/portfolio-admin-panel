@@ -30,7 +30,7 @@
                             </tr>
                             <tr>
                                 <th>Title: </th>
-                                <td>{{ $portfolio->title }}</td>
+                                <td>{!! $portfolio->title !!}</td>
                             </tr>
                             <tr>
                                 <th>Github Link: </th>

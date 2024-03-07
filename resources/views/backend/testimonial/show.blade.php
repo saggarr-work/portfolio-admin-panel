@@ -33,7 +33,7 @@
                             </tr>
                             <tr>
                                 <th>Review: </th>
-                                <td>{{ $testimonial->review }}</td>
+                                <td>{!! $testimonial->review !!}</td>
                             </tr>
                         </table>
                         <a href="{{ route('manage.testimonial') }}" type="button" class="btn btn-success">Go

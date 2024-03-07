@@ -41,7 +41,7 @@
                                             <img src="{{ asset($about->photo) }}" height="50px" width="50px"
                                                 alt="about_photo">
                                         </td>
-                                        <td>{{ substr($about->description, 0, 10) }}...</td>
+                                        <td>{!! substr($about->description, 0, 10) !!}...</td>
                                         <td>
                                             <div class="d-flex">
                                                 <a class="btn btn-success"

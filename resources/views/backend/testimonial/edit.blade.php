@@ -34,8 +34,7 @@
                     </div>
                     <div class="col-md-12">
                         <label for="about_description" class="form-label">Review</label>
-                        <textarea class="form-control" name="review" placeholder="Write what your clients says about you"
-                            id="about_description" style="height: 100px">{{ $testimonial->review }}</textarea>
+                        <textarea class="form-control" name="review" id="summernote">{{ $testimonial->review }}</textarea>
                     </div>
                     <div class="col-12">
                         <button class="btn btn-primary" type="submit">Update Testimonial</button>

@@ -31,8 +31,7 @@
                     </div>
                     <div class="col-md-12">
                         <label for="details" class="form-label">Description</label>
-                        <textarea class="form-control" name="description" placeholder="Write some words about given service" id="details"
-                            style="height: 100px" required></textarea>
+                        <textarea class="form-control" name="description" id="summernote" required></textarea>
                     </div>
                     <div class="col-12">
                         <button class="btn btn-primary" type="submit">Add Service Details</button>
