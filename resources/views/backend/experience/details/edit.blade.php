@@ -19,7 +19,7 @@
                     @csrf
                     @method('PATCH')
                     <div class="col-md-6">
-                        <label for="field_of_experience" class="form-label">Select experience</label>
+                        <label for="field_of_experience" class="form-label">Select Experience</label>
                         <select class="form-select" name="experience_id" aria-label="Default select example">
                             <option disabled>Select experience</option>
                             @foreach ($experience as $experience)
@@ -27,11 +27,13 @@
                                     value="{{ $experience->id }}">{{ $experience->fieldOfExperience }}</option>
                             @endforeach
                         </select>
+                        <span class="text-danger">{{ $errors->has('experience_id') ? $errors->first('experience_id') : '' }}</span>
                     </div>
                     <div class="col-md-6">
                         <label for="field_of_experience" class="form-label">Language / Tools</label>
                         <input type="text" name="languageOrTools" class="form-control" id="field_of_experience"
                             value="{{ $experienceDetails->languageOrTools }}" required>
+                            <span class="text-danger">{{ $errors->has('languageOrTools') ? $errors->first('languageOrTools') : '' }}</span>
                     </div>
                     <div class="col-md-6">
                         <label for="field_of_experience" class="form-label">Level of Experience</label>
@@ -55,6 +57,7 @@
                                 <label class="form-check-label text-success" for="inlineRadio3">Experienced</label>
                             </div>
                         </div>
+                        <span class="text-danger">{{ $errors->has('levelOfExperience') ? $errors->first('levelOfExperience') : '' }}</span>
                     </div>
                     <div class="col-12">
                         <button class="btn btn-primary" type="submit">Update Experience Details</button>

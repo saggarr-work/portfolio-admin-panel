@@ -19,19 +19,23 @@
                     @csrf
                     @method('PATCH')
                     <div class="col-md-6">
-                        <label for="experience" class="form-label">Total Experience</label>
+                        <label for="experience" class="form-label">Total Experience (In Years)</label>
                         <input type="number" name="experience" class="form-control" id="experience"
                             value="{{ $about->experience }}" required>
+                        <span
+                            class="text-danger">{{ $errors->has('experience') ? $errors->first('experience') : '' }}</span>
                     </div>
                     <div class="col-md-6">
-                        <label for="clients" class="form-label">Total Clients</label>
-                        <input type="number" name="client" class="form-control" id="clients"
+                        <label for="client" class="form-label">Total Clients</label>
+                        <input type="number" name="client" class="form-control" id="client"
                             value="{{ $about->client }}" required>
+                        <span class="text-danger">{{ $errors->has('client') ? $errors->first('client') : '' }}</span>
                     </div>
                     <div class="col-md-6">
-                        <label for="projects" class="form-label">Total Projects</label>
-                        <input type="number" name="project" class="form-control" id="projects"
+                        <label for="project" class="form-label">Total Projects</label>
+                        <input type="number" name="project" class="form-control" id="project"
                             value="{{ $about->project }}" required>
+                        <span class="text-danger">{{ $errors->has('project') ? $errors->first('project') : '' }}</span>
                     </div>
                     <div class="col-md-6">
                         <label for="about_photo" class="form-label">Upload About Photo</label>
@@ -39,11 +43,13 @@
                         <div class="col-md-12 mt-2">
                             <img src="{{ asset($about->photo) }}" height="50px" width="50px" alt="about_photo">
                         </div>
+                        <span class="text-danger">{{ $errors->has('photo') ? $errors->first('photo') : '' }}</span>
                     </div>
                     <div class="col-md-12">
                         <label for="about_description" class="form-label">About Description</label>
-                        <textarea class="form-control" name="description" placeholder="Write some words about you, what you do, your profession"
-                            id="summernote" style="height: 100px">{{ $about->description }}</textarea>
+                        <textarea class="form-control" name="description" id="summernote">{{ $about->description }}</textarea>
+                        <span
+                            class="text-danger">{{ $errors->has('description') ? $errors->first('description') : '' }}</span>
                     </div>
                     <div class="col-12">
                         <button class="btn btn-primary" type="submit">Update About</button>

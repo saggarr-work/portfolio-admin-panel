@@ -36,7 +36,11 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $experienceDetails->experience->fieldOfExperience }}</td>
                                         <td>{{ $experienceDetails->languageOrTools }}</td>
-                                        <td>{{ $experienceDetails->levelOfExperience }}</td>
+                                        <td>
+                                            <p
+                                                class="{{ $experienceDetails->levelOfExperience === 'Basic' ? 'text-danger' : ($experienceDetails->levelOfExperience === 'Intermediate' ? 'text-warning' : ($experienceDetails->levelOfExperience === 'Experienced' ? 'text-success' : 'text-default')) }}">
+                                                <b>{{ $experienceDetails->levelOfExperience }}</b></p>
+                                        </td>
                                         <td>
                                             <div class="d-flex">
                                                 <a class="btn btn-success"
@@ -45,7 +49,8 @@
                                                     action="{{ route('delete.details.experience', ['id' => $experienceDetails->id]) }}"
                                                     method="POST">
                                                     @csrf
-                                                    <button class="btn btn-danger ms-2" onclick="return confirm('Delete this detail ?')">Delete</button>
+                                                    <button class="btn btn-danger ms-2"
+                                                        onclick="return confirm('Delete this detail ?')">Delete</button>
                                                 </form>
                                             </div>
                                         </td>

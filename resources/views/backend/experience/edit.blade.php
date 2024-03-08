@@ -19,8 +19,8 @@
                     @method('PATCH')
                     <div class="col-md-6">
                         <label for="field_of_experience" class="form-label">Field of experience</label>
-                        <input type="text" name="fieldOfExperience" class="form-control" id="field_of_experience"
-                            value="{{$experience->fieldOfExperience}}" required>
+                        <input type="text" name="fieldOfExperience" class="form-control" id="field_of_experience" value="{{$experience->fieldOfExperience}}" required>
+                        <span class="text-danger">{{ $errors->has('fieldOfExperience') ? $errors->first('fieldOfExperience') : '' }}</span>
                     </div>
                     <div class="col-12">
                         <button class="btn btn-primary" type="submit">Submit form</button>

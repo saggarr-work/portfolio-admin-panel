@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('client');
             $table->integer('project');
             $table->text('photo');
-            $table->text('description');
+            $table->longText('description')->nullable();
             $table->timestamps();
         });
     }

@@ -17,10 +17,10 @@ return new class extends Migration
             $table->string('designation');
             $table->text('cv');
             $table->text('photo');
-            $table->text('githubLink');
-            $table->text('facebookLink');
-            $table->text('instagramLink');
-            $table->text('whatsappLink');
+            $table->longText('githubLink');
+            $table->longText('facebookLink');
+            $table->longText('instagramLink');
+            $table->longText('whatsappLink');
             $table->timestamps();
         });
     }
