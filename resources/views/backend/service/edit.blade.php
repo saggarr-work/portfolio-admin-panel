@@ -21,6 +21,7 @@
                         <label for="field_of_service" class="form-label">Field of Service</label>
                         <input type="text" name="fieldOfService" class="form-control" id="field_of_service"
                             value="{{ $service->fieldOfService }}" required>
+                            <span class="text-danger">{{ $errors->has('fieldOfService') ? $errors->first('fieldOfService') : '' }}</span>
                     </div>
 
                     <div class="col-12">

@@ -12,6 +12,20 @@ class PortfolioController extends Controller
     }
 
     public function add(Request $request){
+        // vlidation 
+        $this->validate($request, [
+            'thumbnail'     => 'required|image',
+            'title'         => 'required|max:5000',
+            'githubLink'    => 'nullable|max:5000|url',
+            'liveDemo'      => 'required|max:5000|url'
+        ], [
+            'thumbnail.required'    => 'This field is required.',
+            'thumbnail.image'       => 'This field can only contain image file type. e.g(jpg, png, jpeg).',
+            'title.required'        => 'This field is required.',
+            'githubLink.url'        => 'Please enter a valid link.',
+            'liveDemo.required'     => 'This field is required.',
+            'liveDemo.url'          => 'Please enter a valid link.',
+        ]);
         Portfolio::newPortfolio($request);
         return back()->with('msg', 'Portfolio added successfully...!');
     }
@@ -27,6 +41,19 @@ class PortfolioController extends Controller
     }
 
     public function update(Request $request, String $id){
+        // vlidation 
+        $this->validate($request, [
+            'thumbnail'     => 'image',
+            'title'         => 'required|max:5000',
+            'githubLink'    => 'nullable|max:5000|url',
+            'liveDemo'      => 'required|max:5000|url'
+        ], [
+            'thumbnail.image'       => 'This field can only contain image file type. e.g(jpg, png, jpeg).',
+            'title.required'        => 'This field is required.',
+            'githubLink.url'        => 'Please enter a valid link.',
+            'liveDemo.required'     => 'This field is required.',
+            'liveDemo.url'          => 'Please enter a valid link.',
+        ]);
         Portfolio::updatePortfolio($request, $id);
         return redirect(route('manage.portfolio'))->with('msg', 'Portfolio updated successfully...!');
     }

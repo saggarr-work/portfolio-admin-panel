@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('service_id');
             $table->string('heading');
-            $table->text('description');
+            $table->longText('description')->nullable();
             $table->timestamps();
         });
     }

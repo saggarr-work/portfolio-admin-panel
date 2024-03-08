@@ -11,6 +11,25 @@ class ContactController extends Controller
         return view('backend.contact.index');
     }
     public function add(Request $request){
+        // validation 
+        $this->validate($request, [
+            'emailUsername'         => 'required|max:255',
+            'directEmailLink'       => 'required|max:5000|url',
+            'messengerUsername'     => 'required|max:255',
+            'directMessengerLink'   => 'required|max:5000|url',
+            'whatsappUsername'      => 'required|max:255',
+            'directWhatsappLink'    => 'required|max:5000|url',
+        ],[
+            'emailUsername.required'        => 'This field is required.',
+            'directEmailLink.required'      => 'This field is required.',
+            'directEmailLink.url'           => 'Please enter a valid link.',
+            'messengerUsername.required'    => 'This field is required.',
+            'directMessengerLink.required'  => 'This field is required.',
+            'directMessengerLink.url'       => 'Please enter a valid link.',
+            'whatsappUsername.required'     => 'This field is required.',
+            'directWhatsappLink.required'   => 'This field is required.',
+            'directWhatsappLink.url'        => 'Please enter a valid link.',
+        ]);
         $contactCount = Contact::count();
         if($contactCount > 0){
             return back()->with('error', 'Contact infoes are already there. you can update that or delete that to add a new one...!');
@@ -29,6 +48,25 @@ class ContactController extends Controller
         return view('backend.contact.edit', compact('contact'));
     }
     public function update(Request $request, String $id){
+        // validation 
+        $this->validate($request, [
+            'emailUsername'         => 'required|max:255',
+            'directEmailLink'       => 'required|max:5000|url',
+            'messengerUsername'     => 'required|max:255',
+            'directMessengerLink'   => 'required|max:5000|url',
+            'whatsappUsername'      => 'required|max:255',
+            'directWhatsappLink'    => 'required|max:5000|url',
+        ],[
+            'emailUsername.required'        => 'This field is required.',
+            'directEmailLink.required'      => 'This field is required.',
+            'directEmailLink.url'           => 'Please enter a valid link.',
+            'messengerUsername.required'    => 'This field is required.',
+            'directMessengerLink.required'  => 'This field is required.',
+            'directMessengerLink.url'       => 'Please enter a valid link.',
+            'whatsappUsername.required'     => 'This field is required.',
+            'directWhatsappLink.required'   => 'This field is required.',
+            'directWhatsappLink.url'        => 'Please enter a valid link.',
+        ]);
         Contact::updateContact($request, $id);
         return redirect(route('manage.contact'))->with('msg', 'Contact info updated successfully');
     }

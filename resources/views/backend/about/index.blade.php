@@ -35,8 +35,7 @@
                         <span class="text-danger">{{ $errors->has('project') ? $errors->first('project') : '' }}</span>
                     </div>
                     <div class="col-md-6">
-                        <label for="about_photo" class="form-label">Upload About Photo</label><span class="text-danger"><b> *
-                        </b></span>
+                        <label for="about_photo" class="form-label">Upload About Photo</label><span class="text-danger"><b> * </b></span>
                         <input type="file" name="photo" class="form-control" id="about_photo" value="" required>
                         <span class="text-danger">{{ $errors->has('photo') ? $errors->first('photo') : '' }}</span>
                     </div>

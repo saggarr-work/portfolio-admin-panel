@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
             $table->string('emailUsername');
-            $table->string('directEmailLink');
+            $table->longText('directEmailLink');
             $table->string('messengerUsername');
-            $table->string('directMessengerLink');
+            $table->longText('directMessengerLink');
             $table->string('whatsappUsername');
-            $table->string('directWhatsappLink');
+            $table->longText('directWhatsappLink');
             $table->timestamps();
         });
     }

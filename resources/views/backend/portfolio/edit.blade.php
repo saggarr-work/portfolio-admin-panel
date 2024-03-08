@@ -18,23 +18,27 @@
                     @csrf
                     @method('PATCH')
                     <div class="col-md-6">
-                        <label for="thumbnail" class="form-label">Image</label>
+                        <label for="thumbnail" class="form-label">Thumbnail</label>
                         <input type="file" name="thumbnail" accept="image/*" class="form-control" id="thumbnail" value="">
                         <div class="col-md-12 mt-2">
                             <img src="{{asset($portfolio->thumbnail)}}" height="50px" width="50px" alt="portfolio_thumbnail">
                         </div>
+                        <span class="text-danger">{{ $errors->has('thumbnail') ? $errors->first('thumbnail') : '' }}</span>
                     </div>
                     <div class="col-md-12">
                         <label for="title" class="form-label">Title</label>
-                        <textarea class="form-control" name="title" id="summernote" required>{{$portfolio->title}}</textarea>
+                        <textarea class="form-control" name="title" id="summernote">{{$portfolio->title}}</textarea>
+                        <span class="text-danger">{{ $errors->has('title') ? $errors->first('title') : '' }}</span>
                     </div>
                     <div class="col-md-6">
                         <label for="github_link" class="form-label">Github Link</label>
-                        <input type="text" name="githubLink" class="form-control" id="github_link" value="{{$portfolio->githubLink}}" required>
+                        <input type="text" name="githubLink" class="form-control" id="github_link" value="{{$portfolio->githubLink}}">
+                        <span class="text-danger">{{ $errors->has('githubLink') ? $errors->first('githubLink') : '' }}</span>
                     </div>
                     <div class="col-md-6">
                         <label for="live_demo" class="form-label">Live Demo</label>
                         <input type="text" name="liveDemo" class="form-control" id="live_demo" value="{{$portfolio->liveDemo}}" required>
+                        <span class="text-danger">{{ $errors->has('liveDemo') ? $errors->first('liveDemo') : '' }}</span>
                     </div>
                     <div class="col-12">
                         <button class="btn btn-primary" type="submit">Update Portfolio</button>

@@ -27,13 +27,15 @@
                                     value="{{ $experience->id }}">{{ $experience->fieldOfExperience }}</option>
                             @endforeach
                         </select>
-                        <span class="text-danger">{{ $errors->has('experience_id') ? $errors->first('experience_id') : '' }}</span>
+                        <span
+                            class="text-danger">{{ $errors->has('experience_id') ? $errors->first('experience_id') : '' }}</span>
                     </div>
                     <div class="col-md-6">
                         <label for="field_of_experience" class="form-label">Language / Tools</label>
                         <input type="text" name="languageOrTools" class="form-control" id="field_of_experience"
                             value="{{ $experienceDetails->languageOrTools }}" required>
-                            <span class="text-danger">{{ $errors->has('languageOrTools') ? $errors->first('languageOrTools') : '' }}</span>
+                        <span
+                            class="text-danger">{{ $errors->has('languageOrTools') ? $errors->first('languageOrTools') : '' }}</span>
                     </div>
                     <div class="col-md-6">
                         <label for="field_of_experience" class="form-label">Level of Experience</label>
@@ -42,22 +44,23 @@
                                 <input class="form-check-input"
                                     {{ $experienceDetails->levelOfExperience === 'Basic' ? 'checked' : '' }} type="radio"
                                     name="levelOfExperience" id="inlineRadio1" value="Basic">
-                                <label class="form-check-label text-danger" for="inlineRadio1">Basic</label>
+                                <label class="form-check-label text-danger" for="inlineRadio1"><b>Basic</b></label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input"
                                     {{ $experienceDetails->levelOfExperience === 'Intermediate' ? 'checked' : '' }}
                                     type="radio" name="levelOfExperience" id="inlineRadio2" value="Intermediate">
-                                <label class="form-check-label text-primary" for="inlineRadio2">Intermediate</label>
+                                <label class="form-check-label text-warning" for="inlineRadio2"><b>Intermediate</b></label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input"
                                     {{ $experienceDetails->levelOfExperience === 'Experienced' ? 'checked' : '' }}
                                     type="radio" name="levelOfExperience" id="inlineRadio3" value="Experienced">
-                                <label class="form-check-label text-success" for="inlineRadio3">Experienced</label>
+                                <label class="form-check-label text-success" for="inlineRadio3"><b>Experienced</b></label>
                             </div>
                         </div>
-                        <span class="text-danger">{{ $errors->has('levelOfExperience') ? $errors->first('levelOfExperience') : '' }}</span>
+                        <span
+                            class="text-danger">{{ $errors->has('levelOfExperience') ? $errors->first('levelOfExperience') : '' }}</span>
                     </div>
                     <div class="col-12">
                         <button class="btn btn-primary" type="submit">Update Experience Details</button>

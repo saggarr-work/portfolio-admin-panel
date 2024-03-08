@@ -25,14 +25,17 @@
                                 <option {{$serviceDetail->service_id === $service->id ? 'selected' : ''}} value="{{$service->id}}">{{$service->fieldOfService}}</option>
                             @endforeach
                         </select>
+                        <span class="text-danger">{{ $errors->has('service_id') ? $errors->first('service_id') : '' }}</span>
                     </div>
                     <div class="col-md-6">
                         <label for="heading" class="form-label">Heading</label>
                         <input type="text" name="heading" class="form-control" id="heading" value="{{$serviceDetail->heading}}" required>
+                        <span class="text-danger">{{ $errors->has('heading') ? $errors->first('heading') : '' }}</span>
                     </div>
                     <div class="col-md-12">
                         <label for="details" class="form-label">Description</label>
                         <textarea class="form-control" name="description" id="summernote">{{$serviceDetail->description}}</textarea>
+                        <span class="text-danger">{{ $errors->has('description') ? $errors->first('description') : '' }}</span>
                     </div>
                     <div class="col-12">
                         <button class="btn btn-primary" type="submit">Update Service Details</button>

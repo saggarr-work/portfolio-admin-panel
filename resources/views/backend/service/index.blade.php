@@ -17,10 +17,9 @@
                 <form class="row g-3" action="{{ route('add.service') }}" method="POST">
                     @csrf
                     <div class="col-md-6">
-                        <label for="field_of_service" class="form-label">Field of Service</label><span
-                            class="text-danger"><b> * </b></span>
-                        <input type="text" name="fieldOfService" class="form-control" id="field_of_service"
-                            value="" required>
+                        <label for="field_of_service" class="form-label">Field of Service</label><span class="text-danger"><b> * </b></span>
+                        <input type="text" name="fieldOfService" class="form-control" id="field_of_service" value="" required>
+                        <span class="text-danger">{{ $errors->has('fieldOfService') ? $errors->first('fieldOfService') : '' }}</span>
                     </div>
 
                     <div class="col-12">

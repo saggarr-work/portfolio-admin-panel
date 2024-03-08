@@ -17,8 +17,8 @@ class ExperienceController extends Controller
         $this->validate($request, [
             'fieldOfExperience' => 'required|max:255|regex:/[^\d]+/'
         ], [
-            'fieldOfExperience.required' => 'This field is required.',
-            'fieldOfExperience.regex' => 'This field cannot contain only numbers.'
+            'fieldOfExperience.required'    => 'This field is required.',
+            'fieldOfExperience.regex'       => 'This field cannot contain only numbers.'
         ]);
 
         // check the database if there is any existing name with same name i am giving
@@ -27,10 +27,10 @@ class ExperienceController extends Controller
 
         if ($existingExperience) {
             return back()->with('error', 'This experience already exists, please add a new one...!');
+        }else{
+            Experience::newExperience($request);
+            return back()->with('msg', 'Experience added...!');
         }
-        
-        Experience::newExperience($request);
-        return back()->with('msg', 'Experience added...!');
     }
 
     public function manage()
@@ -50,8 +50,8 @@ class ExperienceController extends Controller
         $this->validate($request, [
             'fieldOfExperience' => 'required|max:255|regex:/[^\d]+/'
         ], [
-            'fieldOfExperience.required' => 'This field is required.',
-            'fieldOfExperience.regex' => 'This field cannot contain only numbers.'
+            'fieldOfExperience.required'    => 'This field is required.',
+            'fieldOfExperience.regex'       => 'This field cannot contain only numbers.'
         ]);
 
         // check the database if there is any existing name with same name i am giving except the selected one 

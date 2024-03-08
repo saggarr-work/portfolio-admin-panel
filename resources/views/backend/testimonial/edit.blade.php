@@ -20,21 +20,21 @@
                     @method('PATCH')
                     <div class="col-md-6">
                         <label for="avatar" class="form-label">Add Avatar</label>
-                        <input type="file" name="avatar" class="form-control" id="avatar" value=""
-                            accept="image/*">
+                        <input type="file" name="avatar" class="form-control" id="avatar" accept="image/*">
                         <div class="col-md-12 mt-2">
-                            <img src="{{ asset($testimonial->avatar) }}" height="50px" width="50px"
-                                alt="testimonial_avatar">
+                            <img src="{{ asset($testimonial->avatar) }}" height="50px" width="50px" alt="testimonial_avatar">
                         </div>
+                        <span class="text-danger">{{ $errors->has('avatar') ? $errors->first('avatar') : '' }}</span>
                     </div>
                     <div class="col-md-6">
                         <label for="name" class="form-label">Name</label>
-                        <input type="text" name="name" class="form-control" id="name"
-                            value="{{ $testimonial->name }}" required>
+                        <input type="text" name="name" class="form-control" id="name" value="{{ $testimonial->name }}" required>
+                        <span class="text-danger">{{ $errors->has('name') ? $errors->first('name') : '' }}</span>
                     </div>
                     <div class="col-md-12">
                         <label for="about_description" class="form-label">Review</label>
                         <textarea class="form-control" name="review" id="summernote">{{ $testimonial->review }}</textarea>
+                        <span class="text-danger">{{ $errors->has('review') ? $errors->first('review') : '' }}</span>
                     </div>
                     <div class="col-12">
                         <button class="btn btn-primary" type="submit">Update Testimonial</button>

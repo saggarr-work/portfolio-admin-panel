@@ -11,6 +11,17 @@ class TestimonialController extends Controller
         return view('backend.testimonial.index');
     }
     public function add(Request $request){
+        // validation 
+        $this->validate($request, [
+            'avatar'    => 'required|image|max:5000',
+            'name'      => 'required|max:255',
+            'review'    => 'required|max:5000',
+        ], [
+            'avatar.required'   => 'This field is required',
+            'avatar.img'        => 'This field can only contain image files. e.g(jpg, png, jpeg).',
+            'name.required'     => 'This field is required',
+            'review.required'   => 'This field is required'
+        ]);
         Testimonial::newTestimonial($request);
         return back()->with('msg', 'Testimonial added successfully...!');
     }
@@ -23,6 +34,17 @@ class TestimonialController extends Controller
         return view('backend.testimonial.edit', compact('testimonial'));
     }
     public function update(Request $request, String $id){
+        // validation 
+        $this->validate($request, [
+            'avatar'    => 'image|max:5000',
+            'name'      => 'required|max:255',
+            'review'    => 'required|max:5000',
+        ], [
+            'avatar.required'   => 'This field is required',
+            'avatar.img'        => 'This field can only contain image files. e.g(jpg, png, jpeg).',
+            'name.required'     => 'This field is required',
+            'review.required'   => 'This field is required'
+        ]);
         Testimonial::updateTestimonial($request, $id);
         return redirect(route('manage.testimonial'))->with('msg', 'Testimonial updated successfully...!');
     }
