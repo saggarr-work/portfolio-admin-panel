@@ -17,7 +17,8 @@
                 <form class="row g-3" action="{{ route('add.testimonial') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="col-md-6">
-                        <label for="avatar" class="form-label">Add Avatar</label><span class="text-danger"><b> * </b></span>
+                        <label for="avatar" class="form-label">Add Avatar</label><span class="text-danger"><b> *
+                            </b></span><sub> (prefered size 150 x 150 px)</sub>
                         <input type="file" name="avatar" class="form-control" id="avatar" accept="image/*" required>
                         <span class="text-danger">{{ $errors->has('avatar') ? $errors->first('avatar') : '' }}</span>
                     </div>
@@ -27,7 +28,8 @@
                         <span class="text-danger">{{ $errors->has('name') ? $errors->first('name') : '' }}</span>
                     </div>
                     <div class="col-md-12">
-                        <label for="about_description" class="form-label">Review</label><span class="text-danger"><b> * </b></span>
+                        <label for="about_description" class="form-label">Review</label><span class="text-danger"><b> *
+                            </b></span>
                         <textarea class="form-control" name="review" id="summernote"></textarea>
                         <span class="text-danger">{{ $errors->has('review') ? $errors->first('review') : '' }}</span>
                     </div>

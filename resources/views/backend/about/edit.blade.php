@@ -38,7 +38,7 @@
                         <span class="text-danger">{{ $errors->has('project') ? $errors->first('project') : '' }}</span>
                     </div>
                     <div class="col-md-6">
-                        <label for="about_photo" class="form-label">Upload About Photo</label>
+                        <label for="about_photo" class="form-label">Upload Formal Photo</label> <sub>(prefered size 300 x 300 px)</sub>
                         <input type="file" name="photo" class="form-control" id="about_photo" value="">
                         <div class="col-md-12 mt-2">
                             <img src="{{ asset($about->photo) }}" height="50px" width="50px" alt="about_photo">

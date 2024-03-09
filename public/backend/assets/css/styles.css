@@ -13186,3 +13186,8 @@ body {
 .downward {
   transform: rotate(180deg);
 }
+
+.developer {
+  text-decoration: none;
+  color: red;
+}
