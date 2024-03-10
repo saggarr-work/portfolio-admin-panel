@@ -26,6 +26,7 @@ class Portfolio extends Model
         self::$portfolio->liveDemo = $request->liveDemo;
         self::$portfolio->save();
     }
+
     public static function updatePortfolio($request, $id){
         self::$portfolio = Portfolio::find($id);
         if($request->file('thumbnail')){
@@ -39,6 +40,7 @@ class Portfolio extends Model
         self::$portfolio->liveDemo = $request->liveDemo;
         self::$portfolio->save();
     }
+    
     public static function deletePortfolio($id){
         self::$portfolio = Portfolio::find($id);
         if(file_exists(self::$portfolio->thumbnail)){

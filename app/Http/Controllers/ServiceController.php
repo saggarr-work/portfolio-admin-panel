@@ -7,13 +7,11 @@ use Illuminate\Http\Request;
 
 class ServiceController extends Controller
 {
-    public function index()
-    {
+    public function index(){
         return view('backend.service.index');
     }
 
-    public function add(Request $request)
-    {
+    public function add(Request $request){
         // validation 
         $this->validate($request, [
             'fieldOfService' => 'required|max:255|regex:/[^\d]+/'
@@ -34,20 +32,17 @@ class ServiceController extends Controller
         }
     }
 
-    public function manage()
-    {
+    public function manage(){
         $services = Service::all();
         return view('backend.service.manage', compact('services'));
     }
 
-    public function edit(String $id)
-    {
+    public function edit(String $id){
         $service = Service::find($id);
         return view('backend.service.edit', compact('service'));
     }
 
-    public function update(Request $request, String $id)
-    {
+    public function update(Request $request, String $id){
         // validation 
         $this->validate($request, [
             'fieldOfService' => 'required|max:255|regex:/[^\d]+/'
@@ -70,9 +65,8 @@ class ServiceController extends Controller
         }  
     }
 
-    public function delete(String $id)
-    {
+    public function delete(String $id){
         Service::deleteService($id);
-        return back()->with('error', 'Service deleted successfully...!');
+        return back()->with('msg', 'Service deleted successfully...!');
     }
 }

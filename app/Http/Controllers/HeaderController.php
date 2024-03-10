@@ -7,13 +7,12 @@ use Illuminate\Http\Request;
 
 class HeaderController extends Controller
 {
-    public function index()
-    {
+    public function index(){
         return view('backend.header.index');
     }
 
-    public function add(Request $request)
-    {
+    public function add(Request $request){
+        // validation 
         $this->validate($request, [
             'fullName'      => 'required|max:255|regex:/^[a-zA-Z\s]+$/',
             'designation'   => 'required|max:255|regex:/^[a-zA-Z\s]+$/',
@@ -41,6 +40,8 @@ class HeaderController extends Controller
             'whatsappLink.required'     => 'This field is required',
             'whatsappLink.url'          => 'Please enter a valid link.',
         ]);
+
+        // logic & input 
         $headerCount = Header::count();
         if ($headerCount > 0) {
             return back()->with('error', 'Header infoes are already there. you can update that or delete that to add a new one...!');
@@ -50,20 +51,18 @@ class HeaderController extends Controller
         }
     }
 
-    public function manage()
-    {
+    public function manage(){
         $header = Header::all();
         return view('backend.header.manage', compact('header'));
     }
 
-    public function edit(String $id)
-    {
+    public function edit(String $id){
         $header = Header::find($id);
         return view('backend.header.edit', compact('header'));
     }
 
-    public function update(Request $request, String $id)
-    {
+    public function update(Request $request, String $id){
+        // validation 
         $this->validate($request, [
             'fullName'      => 'required|regex:/^[a-zA-Z\s]+$/',
             'designation'   => 'required|regex:/^[a-zA-Z\s]+$/',
@@ -79,7 +78,7 @@ class HeaderController extends Controller
             'designation.required'      => 'This field is required.',
             'designation.regex'         => 'This field can only contain letters & spaces.',
             'cv.mimes'                  => 'CV must be in pdf format.',
-            'photo.image'               => 'Photo must be in any photo format(jpg, png, jpeg).',
+            'photo.image'               => 'Photo must be in photo format (e.g. jpg, jpeg, png etc.).',
             'githubLink.required'       => 'This field Link is required',
             'githubLink.url'            => 'Please enter a valid link.',
             'facebookLink.required'     => 'This field is required',
@@ -89,18 +88,18 @@ class HeaderController extends Controller
             'whatsappLink.required'     => 'This field is required',
             'whatsappLink.url'          => 'Please enter a valid link.',
         ]);
+
+        // input 
         Header::updateHeader($request, $id);
         return redirect(route('manage.header'))->with('msg', 'Congrats, Header updated successfully...!');
     }
 
-    public function show(String $id)
-    {
+    public function show(String $id){
         $header = Header::find($id);
         return view('backend.header.show', compact('header'));
     }
 
-    public function delete(String $id)
-    {
+    public function delete(String $id){
         Header::deleteHeader($id);
         return redirect(route('header'))->with('msg', 'Header info deleted successfully...!');
     }

@@ -15,11 +15,13 @@ class Service extends Model
         self::$service->fieldOfService = $request->fieldOfService;
         self::$service->save();
     }
+
     public static function updateService($request, $id){
         self::$service = Service::find($id);
         self::$service->fieldOfService = $request->fieldOfService;
         self::$service->save();
     }
+    
     public static function deleteService($id){
         self::$service = Service::find($id);
         self::$service->serviceDetails()->delete();

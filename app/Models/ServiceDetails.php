@@ -17,6 +17,7 @@ class ServiceDetails extends Model
         self::$serviceDetails->description = $request->description;
         self::$serviceDetails->save();
     }
+
     public static function updateServiceDetails($request, $id){
         self::$serviceDetails = ServiceDetails::find($id);
         self::$serviceDetails->service_id = $request->service_id;
@@ -24,6 +25,7 @@ class ServiceDetails extends Model
         self::$serviceDetails->description = $request->description;
         self::$serviceDetails->save();
     }
+    
     public static function deleteServiceDetails($id){
         self::$serviceDetails = ServiceDetails::find($id);
         self::$serviceDetails->delete();

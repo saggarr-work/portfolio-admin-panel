@@ -10,8 +10,7 @@ class About extends Model
     use HasFactory;
     private static $about, $image, $imageName, $imageDirectory;
 
-    public static function imageUpload($request)
-    {
+    public static function imageUpload($request){
         self::$image = $request->file('photo');
         self::$imageName = self::$image->getClientOriginalName();
         self::$imageDirectory = 'uploads/about-photo/';
@@ -19,8 +18,7 @@ class About extends Model
         return self::$imageDirectory . self::$imageName;
     }
 
-    public static function newAbout($request)
-    {
+    public static function newAbout($request){
         self::$about = new About();
         self::$about->experience = $request->experience;
         self::$about->client = $request->client;
@@ -30,8 +28,7 @@ class About extends Model
         self::$about->save();
     }
 
-    public static function updateAbout($request, $id)
-    {
+    public static function updateAbout($request, $id){
         self::$about = About::find($id);
         self::$about->experience = $request->experience;
         self::$about->client = $request->client;
@@ -46,8 +43,7 @@ class About extends Model
         self::$about->save();
     }
 
-    public static function deleteAbout($id)
-    {
+    public static function deleteAbout($id){
         self::$about = About::find($id);
         if(file_exists(self::$about->photo)){
             unlink(self::$about->photo);

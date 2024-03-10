@@ -25,6 +25,7 @@ class Testimonial extends Model
         self::$testimonial->review = $request->review;
         self::$testimonial->save();
     }
+    
     public static function updateTestimonial($request, $id){
         self::$testimonial = Testimonial::find($id);
         if($request->file('avatar')){

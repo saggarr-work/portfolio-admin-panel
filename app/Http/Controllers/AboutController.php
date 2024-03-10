@@ -7,13 +7,12 @@ use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {
-    public function index()
-    {
+    public function index(){
         return view('backend.about.index');
     }
 
-    public function add(Request $request)
-    {
+    public function add(Request $request){
+        // validation 
         $this->validate($request, [
             'experience'    => 'required|numeric|gte:0|lt:100',
             'client'        => 'required|numeric|gte:0',
@@ -32,9 +31,11 @@ class AboutController extends Controller
             'project.numeric'       => 'This field can only contain numbers.',
             'project.gte'           => 'This field can not be negative.',
             'photo.required'        => 'This field is required.',
-            'photo.image'           => 'Photo must be in photo format(jpg, png, jpeg).',
+            'photo.image'           => 'Photo must be in photo format (e.g. jpg, jpeg, png etc.).',
             'description.required'  => 'This field is required.'
         ]);
+
+        // logic & input 
         $aboutCount = About::count();
         if ($aboutCount > 0) {
             return back()->with('error', 'About infoes are already there. you can update that or delete that to add a new one...!');
@@ -44,20 +45,18 @@ class AboutController extends Controller
         }
     }
 
-    public function manage()
-    {
+    public function manage(){
         $about = About::all();
         return view('backend.about.manage', compact('about'));
     }
 
-    public function edit(String $id)
-    {
+    public function edit(String $id){
         $about = About::find($id);
         return view('backend.about.edit', compact('about'));
     }
 
-    public function update(Request $request, String $id)
-    {
+    public function update(Request $request, String $id){
+        // validation 
         $this->validate($request, [
             'experience'    => 'required|numeric|gte:0|lt:100',
             'client'        => 'required|numeric|gte:0',
@@ -78,18 +77,18 @@ class AboutController extends Controller
             'photo.image'           => 'Photo must be in photo format(jpg, png, jpeg).',
             'description.required'  => 'This field is required.'
         ]);
+
+        // input 
         About::updateAbout($request, $id);
         return redirect(route('manage.about'))->with('msg', 'About info updated successfully...!');
     }
 
-    public function show(String $id)
-    {
+    public function show(String $id){
         $about = About::find($id);
         return view('backend.about.show', compact('about'));
     }
 
-    public function delete(String $id)
-    {
+    public function delete(String $id){
         About::deleteAbout($id);
         return redirect(route('about'))->with('msg', 'About info deleted successfully');
     }

@@ -17,6 +17,7 @@ class ExperienceDteails extends Model
         self::$experienceDetails->levelOfExperience = $request->levelOfExperience;
         self::$experienceDetails->save();
     }
+    
     public static function updateExperienceDetails($request, $id){
         self::$experienceDetails = ExperienceDteails::find($id);
         self::$experienceDetails->experience_id = $request->experience_id;

@@ -26,6 +26,8 @@ class PortfolioController extends Controller
             'liveDemo.required'     => 'This field is required.',
             'liveDemo.url'          => 'Please enter a valid link.',
         ]);
+
+        // input 
         Portfolio::newPortfolio($request);
         return back()->with('msg', 'Portfolio added successfully...!');
     }
@@ -48,12 +50,14 @@ class PortfolioController extends Controller
             'githubLink'    => 'nullable|max:5000|url',
             'liveDemo'      => 'required|max:5000|url'
         ], [
-            'thumbnail.image'       => 'This field can only contain image file type. e.g(jpg, png, jpeg).',
+            'thumbnail.image'       => 'This field can only contain image file format. (e.g. jpg, jpeg, png etc.).',
             'title.required'        => 'This field is required.',
             'githubLink.url'        => 'Please enter a valid link.',
             'liveDemo.required'     => 'This field is required.',
             'liveDemo.url'          => 'Please enter a valid link.',
         ]);
+        
+        // input 
         Portfolio::updatePortfolio($request, $id);
         return redirect(route('manage.portfolio'))->with('msg', 'Portfolio updated successfully...!');
     }
@@ -65,6 +69,6 @@ class PortfolioController extends Controller
 
     public function delete(String $id){
         Portfolio::deletePortfolio($id);
-        return back()->with('error', 'Portfolio deleted successfully...!');
+        return back()->with('msg', 'Portfolio deleted successfully...!');
     }
 }

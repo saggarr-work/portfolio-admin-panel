@@ -15,11 +15,13 @@ class Experience extends Model
         self::$experience->fieldOfExperience = $request->fieldOfExperience;
         self::$experience->save();
     }
+
     public static function updateExperience($request, $id){
         self::$experience = Experience::find($id);
         self::$experience->fieldOfExperience = $request->fieldOfExperience;
         self::$experience->save();
     }
+    
     public static function deleteExperience($id){
         self::$experience = Experience::find($id);
         self::$experience->experienceDetails()->delete();

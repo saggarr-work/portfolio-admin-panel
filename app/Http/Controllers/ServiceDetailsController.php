@@ -32,7 +32,7 @@ class ServiceDetailsController extends Controller
 
         // logic & input 
         if($existingHeading){
-            return back()->with('error', 'There is a same heading in the database for this service.');
+            return back()->with('error', 'There is a same heading in the database for this service...!');
         }else{
             ServiceDetails::newServiceDetails($request);
             return back()->with('msg', 'Service details added successfully...!');
@@ -70,7 +70,7 @@ class ServiceDetailsController extends Controller
 
         // logic & input 
         if($existingHeading){
-            return back()->with('error', 'There is a same heading in the database for this service.');
+            return back()->with('error', 'There is a same heading in the database for this service...!');
         }else{
             ServiceDetails::updateServiceDetails($request, $id);
             return redirect(route('manage.details.service'))->with('msg', 'Service details updated successfully...!');
@@ -84,6 +84,6 @@ class ServiceDetailsController extends Controller
 
     public function delete(String $id){
         ServiceDetails::deleteServiceDetails($id);
-        return back()->with('error', 'Service details deleted sucessfully...!');
+        return back()->with('msg', 'Service details deleted sucessfully...!');
     }
 }

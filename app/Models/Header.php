@@ -10,8 +10,7 @@ class Header extends Model
     use HasFactory;
     private static $header, $image, $imageName, $imageDirectory, $cv, $cvName, $cvDirectory;
 
-    public static function imageUpload($request)
-    {
+    public static function imageUpload($request){
         self::$image = $request->file('photo');
         self::$imageName = self::$image->getClientOriginalName();
         self::$imageDirectory = 'uploads/header-photo/';
@@ -19,8 +18,7 @@ class Header extends Model
         return self::$imageDirectory . self::$imageName;
     }
 
-    public static function cvUpload($request)
-    {
+    public static function cvUpload($request){
         self::$cv = $request->file('cv');
         self::$cvName = self::$cv->getClientOriginalName();
         self::$cvDirectory = 'uploads/cv/';
@@ -28,8 +26,7 @@ class Header extends Model
         return self::$cvDirectory . self::$cvName;
     }
 
-    public static function newHeader($request)
-    {
+    public static function newHeader($request){
         self::$header = new Header();
         self::$header->fullName = $request->fullName;
         self::$header->designation = $request->designation;
@@ -42,8 +39,7 @@ class Header extends Model
         self::$header->save();
     }
 
-    public static function updateHeader($request, $id)
-    {
+    public static function updateHeader($request, $id){
         self::$header = Header::find($id);
         self::$header->fullName = $request->fullName;
         self::$header->designation = $request->designation;
@@ -66,8 +62,7 @@ class Header extends Model
         self::$header->save();
     }
 
-    public static function deleteHeader($id)
-    {
+    public static function deleteHeader($id){
         self::$header = Header::find($id);
         if(file_exists(self::$header->cv)){
             unlink(self::$header->cv);

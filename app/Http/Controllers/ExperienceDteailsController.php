@@ -32,7 +32,7 @@ class ExperienceDteailsController extends Controller
 
         // logic and input 
         if($existingLanguageOrTools){
-            return back()->with('error', 'There is a same record in the database for this field of experience.');
+            return back()->with('error', 'There is a same record in the database for this field of experience...!');
         }else{
             ExperienceDteails::newExperienceDetails($request);
             return back()->with('msg', 'New experience details added for the experience...!');
@@ -70,7 +70,7 @@ class ExperienceDteailsController extends Controller
         
         // logic and input 
         if($existingLanguageOrTools){
-            return back()->with('error', 'There is a same record in the database for this field of experience.');
+            return back()->with('error', 'There is a same record in the database for this field of experience...!');
         }else{
             ExperienceDteails::updateExperienceDetails($request, $id);
             return redirect(route('manage.details.experience'))->with('msg', 'Experience details updated sucessfully...!');
@@ -79,6 +79,6 @@ class ExperienceDteailsController extends Controller
 
     public function delete(String $id){
         ExperienceDteails::deleteExperienceDetails($id);
-        return back()->with('error', 'Experience details deleted successfully...!');
+        return back()->with('msg', 'Experience details deleted successfully...!');
     }
 }

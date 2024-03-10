@@ -20,6 +20,7 @@ class Contact extends Model
         self::$contact->directWhatsappLink = $request->directWhatsappLink;
         self::$contact->save();
     }
+
     public static function updateContact($request, $id){
         self::$contact = Contact::find($id);
         self::$contact->emailUsername = $request->emailUsername;
@@ -30,6 +31,7 @@ class Contact extends Model
         self::$contact->directWhatsappLink = $request->directWhatsappLink;
         self::$contact->save();
     }
+    
     public static function deleteContact($id){
         self::$contact = Contact::find($id);
         self::$contact->delete();
