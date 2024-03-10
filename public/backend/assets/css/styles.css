@@ -13184,7 +13184,7 @@ body {
 
 /* Add the 'downward' class styles */
 .downward {
-  transform: rotate(180deg);
+  transform: rotate(0deg);
 }
 
 .developer {

@@ -43,19 +43,27 @@
                             </tr>
                             <tr>
                                 <th>Github Link: </th>
-                                <td>{{ $header->githubLink }}</td>
+                                <td>
+                                    <a href="{{ $header->githubLink }}" target="blank">{{ $header->githubLink }}</a>
+                                </td>
                             </tr>
                             <tr>
                                 <th>Facebook Link: </th>
-                                <td>{{ $header->facebookLink }}</td>
+                                <td>
+                                    <a href="{{ $header->facebookLink }}" target="blank">{{ $header->facebookLink }}</a>
+                                </td>
                             </tr>
                             <tr>
                                 <th>Instagram Link: </th>
-                                <td>{{ $header->instagramLink }}</td>
+                                <td>
+                                    <a href="{{ $header->instagramLink }}" target="blank">{{ $header->instagramLink }}</a>
+                                </td>
                             </tr>
                             <tr>
                                 <th>Whatsapp Link: </th>
-                                <td>{{ $header->whatsappLink }}</td>
+                                <td>
+                                    <a href="{{ $header->whatsappLink }}" target="blank">{{ $header->whatsappLink }}</a>
+                                </td>
                             </tr>
                         </table>
                         <a href="{{ route('manage.header') }}" type="button" class="btn btn-success">Go

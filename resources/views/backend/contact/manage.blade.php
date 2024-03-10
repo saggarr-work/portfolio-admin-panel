@@ -36,17 +36,11 @@
                                 @foreach ($contacts as $contact)
                                     <tr>
                                         <td>{{ substr($contact->emailUsername, 0, 5) }}...</td>
-                                        <td>
-                                            <a href="{{$contact->directEmailLink}}" target="blank">{{ substr($contact->directEmailLink, 0, 5) }}...</a>
-                                        </td>
+                                        <td>{{ substr($contact->directEmailLink, 0, 5) }}...</td>
                                         <td>{{ substr($contact->messengerUsername, 0, 5) }}...</td>
-                                        <td>
-                                            <a href="{{$contact->directMessengerLink}}" target="blank">{{ substr($contact->directMessengerLink,0,5) }}...</a>
-                                        </td>
+                                        <td>{{ substr($contact->directMessengerLink,0,5) }}...</td>
                                         <td>{{ substr($contact->whatsappUsername,0,5) }}...</td>
-                                        <td>
-                                            <a href="{{$contact->directWhatsappLink}}" target="blank">{{ substr($contact->directWhatsappLink,0,5) }}...</a>
-                                        </td>
+                                        <td>{{ substr($contact->directWhatsappLink,0,5) }}...</td>
                                         <td>
                                             <div class="d-flex">
                                                 <a class="btn btn-success"

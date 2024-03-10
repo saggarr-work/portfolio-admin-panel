@@ -40,8 +40,8 @@
                                                 alt="portfolio_thumbnail">
                                         </td>
                                         <td>{!! substr($portfolio->title, 0, 10) !!}...</td>
-                                        <td>{{ $portfolio->githubLink }}</td>
-                                        <td>{{ $portfolio->liveDemo }}</td>
+                                        <td>{{ substr($portfolio->githubLink, 0, 20) }}...</td>
+                                        <td>{{ substr($portfolio->liveDemo, 0, 20) }}...</td>
                                         <td>
                                             <div class="d-flex">
                                                 <a class="btn btn-success"
@@ -51,7 +51,8 @@
                                                 <form action="{{ route('delete.portfolio', ['id' => $portfolio->id]) }}"
                                                     method="POST">
                                                     @csrf
-                                                    <button class="btn btn-danger ms-2" onclick="return confirm('Delete this portfolio ?')">Delete</button>
+                                                    <button class="btn btn-danger ms-2"
+                                                        onclick="return confirm('Delete this portfolio ?')">Delete</button>
                                                 </form>
                                             </div>
                                         </td>

@@ -34,11 +34,15 @@
                             </tr>
                             <tr>
                                 <th>Github Link: </th>
-                                <td>{{ $portfolio->githubLink }}</td>
+                                <td>
+                                    <a href="{{ $portfolio->githubLink }}" target="blank">{{ $portfolio->githubLink }}</a>
+                                </td>
                             </tr>
                             <tr>
                                 <th>Live Demo: </th>
-                                <td>{{ $portfolio->liveDemo }}</td>
+                                <td>
+                                    <a href="{{ $portfolio->liveDemo }}" target="blank">{{ $portfolio->liveDemo }}</a>
+                                </td>
                             </tr>
                         </table>
                         <a href="{{ route('manage.portfolio') }}" type="button" class="btn btn-success">Go
