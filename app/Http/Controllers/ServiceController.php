@@ -16,12 +16,13 @@ class ServiceController extends Controller
         $this->validate($request, [
             'fieldOfService' => 'required|max:255|regex:/[^\d]+/'
         ], [
-            'fieldOfService.required'   => 'This field is required.',
-            'fieldOfService.regex'      => 'This field cannot contain only numbers.'
+            'fieldOfService.required'   => 'This field is required',
+            'fieldOfService.regex'      => 'This field cannot contain only numbers'
         ]);
 
         // check 
-        $existingService = Service::where('fieldOfService', $request->fieldOfService)->first();
+        $existingService = Service::where('fieldOfService', $request->fieldOfService)
+        ->first();
 
         // logic & input 
         if ($existingService) {
@@ -47,8 +48,8 @@ class ServiceController extends Controller
         $this->validate($request, [
             'fieldOfService' => 'required|max:255|regex:/[^\d]+/'
         ], [
-            'fieldOfService.required'   => 'This field is required.',
-            'fieldOfService.regex'      => 'This field cannot contain only numbers.'
+            'fieldOfService.required'   => 'This field is required',
+            'fieldOfService.regex'      => 'This field cannot contain only numbers'
         ]);
 
         // check 

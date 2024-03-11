@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('fullName');
             $table->string('designation');
-            $table->text('cv');
-            $table->text('photo');
+            $table->longText('cv');
+            $table->longText('photo');
             $table->longText('githubLink');
             $table->longText('facebookLink');
             $table->longText('instagramLink');

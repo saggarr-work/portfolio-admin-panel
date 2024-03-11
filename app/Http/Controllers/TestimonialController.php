@@ -14,12 +14,12 @@ class TestimonialController extends Controller
     public function add(Request $request){
         // validation 
         $this->validate($request, [
-            'avatar'    => 'required|image|max:5000',
+            'avatar'    => 'required|image',
             'name'      => 'required|max:255',
             'review'    => 'required|max:5000',
         ], [
             'avatar.required'   => 'This field is required',
-            'avatar.img'        => 'Avatar must be in photo format (e.g. jpg, jpeg, png etc.).',
+            'avatar.image'      => 'Avatar must be in image file format (jpg, jpeg, png etc.)',
             'name.required'     => 'This field is required',
             'review.required'   => 'This field is required'
         ]);
@@ -42,12 +42,12 @@ class TestimonialController extends Controller
     public function update(Request $request, String $id){
         // validation 
         $this->validate($request, [
-            'avatar'    => 'image|max:5000',
+            'avatar'    => 'image',
             'name'      => 'required|max:255',
             'review'    => 'required|max:5000',
         ], [
             'avatar.required'   => 'This field is required',
-            'avatar.img'        => 'This field can only contain image files. e.g(jpg, png, jpeg).',
+            'avatar.image'      => 'Avatar must be in image file format (jpg, jpeg, png etc.)',
             'name.required'     => 'This field is required',
             'review.required'   => 'This field is required'
         ]);

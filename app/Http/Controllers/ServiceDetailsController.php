@@ -20,9 +20,9 @@ class ServiceDetailsController extends Controller
             'heading'       => 'required|max:255',
             'description'   => 'required|max:5000'
         ], [
-            'service_id.required'   => 'This field is required.',
-            'heading.required'      => 'This field is required.',
-            'description.required'  => 'This field is required.'
+            'service_id.required'   => 'This field is required',
+            'heading.required'      => 'This field is required',
+            'description.required'  => 'This field is required'
         ]);
 
         // check 
@@ -57,9 +57,9 @@ class ServiceDetailsController extends Controller
             'heading'       => 'required|max:255',
             'description'   => 'required|max:5000'
         ], [
-            'service_id.required'   => 'This field is required.',
-            'heading.required'      => 'This field is required.',
-            'description.required'  => 'This field is required.'
+            'service_id.required'   => 'This field is required',
+            'heading.required'      => 'This field is required',
+            'description.required'  => 'This field is required'
         ]);
 
         // check 

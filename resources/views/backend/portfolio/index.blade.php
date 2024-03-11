@@ -11,8 +11,20 @@
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item active">Add Portfolio</li>
             </ol>
-            <div class="text-success text-center">{{ Session('msg') }}</div>
-            <div class="text-danger text-center">{{ Session('error') }}</div>
+            
+            @if (Session::has('msg'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <span>{{ Session('msg') }}</span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+            @if (Session::has('error'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <span>{{ Session('error') }}</span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+
             <div class="row">
                 <form class="row g-3" action="{{ route('add.portfolio') }}" method="POST" enctype="multipart/form-data">
                     @csrf

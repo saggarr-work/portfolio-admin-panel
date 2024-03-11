@@ -15,24 +15,26 @@ class AboutController extends Controller
         // validation 
         $this->validate($request, [
             'experience'    => 'required|numeric|gte:0|lt:100',
-            'client'        => 'required|numeric|gte:0',
-            'project'       => 'required|numeric|gte:0',
+            'client'        => 'required|numeric|gte:0|lt:10000',
+            'project'       => 'required|numeric|gte:0|lt:10000',
             'photo'         => 'required|image',
             'description'   => 'required|max:5000'
         ], [
-            'experience.required'   => 'This field is required.',
-            'experience.numeric'    => 'This field can only contain numbers.',
-            'experience.gte'        => 'This field can not be negative.',
-            'experience.lt'         => 'Experience must be less than 100 years.',
-            'client.required'       => 'This field is required.',
-            'client.numeric'        => 'This field can only contain numbers.',
-            'client.gte'            => 'This field can not be negative.',
-            'project.required'      => 'This field is required.',
-            'project.numeric'       => 'This field can only contain numbers.',
-            'project.gte'           => 'This field can not be negative.',
-            'photo.required'        => 'This field is required.',
-            'photo.image'           => 'Photo must be in photo format (e.g. jpg, jpeg, png etc.).',
-            'description.required'  => 'This field is required.'
+            'experience.required'   => 'This field is required',
+            'experience.numeric'    => 'This field can only contain numbers',
+            'experience.gte'        => 'This field can not be negative',
+            'experience.lt'         => 'Experience must be less than 100 years',
+            'client.required'       => 'This field is required',
+            'client.numeric'        => 'This field can only contain numbers',
+            'client.gte'            => 'This field can not be negative',
+            'client.lt'             => 'Total clients must be less than 10,000',
+            'project.required'      => 'This field is required',
+            'project.numeric'       => 'This field can only contain numbers',
+            'project.gte'           => 'This field can not be negative',
+            'project.lt'            => 'Total projects must be less than 10,000',
+            'photo.required'        => 'This field is required',
+            'photo.image'           => 'Photo must be in image file format (jpg, jpeg, png etc.)',
+            'description.required'  => 'This field is required'
         ]);
 
         // logic & input 
@@ -59,23 +61,25 @@ class AboutController extends Controller
         // validation 
         $this->validate($request, [
             'experience'    => 'required|numeric|gte:0|lt:100',
-            'client'        => 'required|numeric|gte:0',
-            'project'       => 'required|numeric|gte:0',
+            'client'        => 'required|numeric|gte:0|lt:10000',
+            'project'       => 'required|numeric|gte:0|lt:10000',
             'photo'         => 'image',
             'description'   => 'required|max:5000'
         ], [
-            'experience.required'   => 'This field is required.',
-            'experience.numeric'    => 'This field can only contain numbers.',
-            'experience.gte'        => 'This field cannot be negative.',
-            'experience.lt'         => 'Experience must be less than 100 years.',
-            'client.required'       => 'This field is required.',
-            'client.numeric'        => 'This field can only contain numbers.',
-            'client.gte'            => 'This field cannot be negative.',
-            'project.required'      => 'This field is required.',
-            'project.numeric'       => 'This field can only contain numbers.',
-            'project.gte'           => 'This field cannot be negative.',
-            'photo.image'           => 'Photo must be in photo format(jpg, png, jpeg).',
-            'description.required'  => 'This field is required.'
+            'experience.required'   => 'This field is required',
+            'experience.numeric'    => 'This field can only contain numbers',
+            'experience.gte'        => 'This field cannot be negative',
+            'experience.lt'         => 'Experience must be less than 100 years',
+            'client.required'       => 'This field is required',
+            'client.numeric'        => 'This field can only contain numbers',
+            'client.gte'            => 'This field cannot be negative',
+            'client.lt'             => 'Total clients must be less than 10,000',
+            'project.required'      => 'This field is required',
+            'project.numeric'       => 'This field can only contain numbers',
+            'project.gte'           => 'This field cannot be negative',
+            'project.lt'            => 'Total projects must be less than 10,000',
+            'photo.image'           => 'Photo must be in image file format (jpg, jpeg, png etc.)',
+            'description.required'  => 'This field is required'
         ]);
 
         // input 

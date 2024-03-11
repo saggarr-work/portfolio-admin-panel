@@ -14,8 +14,8 @@ class HeaderController extends Controller
     public function add(Request $request){
         // validation 
         $this->validate($request, [
-            'fullName'      => 'required|max:255|regex:/^[a-zA-Z\s]+$/',
-            'designation'   => 'required|max:255|regex:/^[a-zA-Z\s]+$/',
+            'fullName'      => 'required|max:255|regex:/^[a-zA-Z0-9\s\-\'",.()]+$/',
+            'designation'   => 'required|max:255|regex:/^[a-zA-Z0-9\s\-\'",.()]+$/',
             'cv'            => 'required|mimes:pdf',
             'photo'         => 'required|image',
             'githubLink'    => 'required|max:5000|url',
@@ -23,22 +23,22 @@ class HeaderController extends Controller
             'instagramLink' => 'required|max:5000|url',
             'whatsappLink'  => 'required|max:5000|url'
         ], [
-            'fullName.required'         => 'This field is required.',
-            'fullName.regex'            => 'This field can only contain letters & spaces.',
-            'designation.required'      => 'This field is required.',
-            'designation.regex'         => 'This field can only contain letters & spaces.',
-            'cv.required'               => 'This field is required.',
-            'cv.mimes'                  => 'CV must be in pdf format.',
-            'photo.required'            => 'This field is required.',
-            'photo.image'               => 'Photo must be in photo format(jpg, png, jpeg).',
+            'fullName.required'         => 'This field is required',
+            'fullName.regex'            => 'This field can only contain numbers, letters, spaces & symbols',
+            'designation.required'      => 'This field is required',
+            'designation.regex'         => 'This field can only contain numbers, letters, spaces & symbols',
+            'cv.required'               => 'This field is required',
+            'cv.mimes'                  => 'CV must be in pdf format',
+            'photo.required'            => 'This field is required',
+            'photo.image'               => 'Photo must be in image file format (jpg, jpeg, png etc.)',
             'githubLink.required'       => 'This field Link is required',
-            'githubLink.url'            => 'Please enter a valid link.',
+            'githubLink.url'            => 'Please enter a valid link',
             'facebookLink.required'     => 'This field is required',
-            'facebookLink.url'          => 'Please enter a valid link.',
+            'facebookLink.url'          => 'Please enter a valid link',
             'instagramLink.required'    => 'This field is required',
-            'instagramLink.url'         => 'Please enter a valid link.',
+            'instagramLink.url'         => 'Please enter a valid link',
             'whatsappLink.required'     => 'This field is required',
-            'whatsappLink.url'          => 'Please enter a valid link.',
+            'whatsappLink.url'          => 'Please enter a valid link',
         ]);
 
         // logic & input 
@@ -47,7 +47,7 @@ class HeaderController extends Controller
             return back()->with('error', 'Header infoes are already there. you can update that or delete that to add a new one...!');
         } else {
             Header::newHeader($request);
-            return back()->with('msg', 'Header Infoes added successfully...!');
+            return back()->with('msg', 'Header Info added successfully...!');
         }
     }
 
@@ -64,34 +64,34 @@ class HeaderController extends Controller
     public function update(Request $request, String $id){
         // validation 
         $this->validate($request, [
-            'fullName'      => 'required|regex:/^[a-zA-Z\s]+$/',
-            'designation'   => 'required|regex:/^[a-zA-Z\s]+$/',
+            'fullName'      => 'required|max:255|regex:/^[a-zA-Z0-9\s\-\'",.()]+$/',
+            'designation'   => 'required|max:255|regex:/^[a-zA-Z0-9\s\-\'",.()]+$/',
             'cv'            => 'mimes:pdf',
             'photo'         => 'image',
-            'githubLink'    => 'required|url',
-            'facebookLink'  => 'required|url',
-            'instagramLink' => 'required|url',
-            'whatsappLink'  => 'required|url'
+            'githubLink'    => 'required|max:5000|url',
+            'facebookLink'  => 'required|max:5000|url',
+            'instagramLink' => 'required|max:5000|url',
+            'whatsappLink'  => 'required|max:5000|url'
         ], [
-            'fullName.required'         => 'This field is required.',
-            'fullName.regex'            => 'This field can only contain letters & spaces.',
-            'designation.required'      => 'This field is required.',
-            'designation.regex'         => 'This field can only contain letters & spaces.',
-            'cv.mimes'                  => 'CV must be in pdf format.',
-            'photo.image'               => 'Photo must be in photo format (e.g. jpg, jpeg, png etc.).',
+            'fullName.required'         => 'This field is required',
+            'fullName.regex'            => 'This field can only contain numbers, letters, spaces & symbols',
+            'designation.required'      => 'This field is required',
+            'designation.regex'         => 'This field can only contain numbers, letters, spaces & symbols',
+            'cv.mimes'                  => 'CV must be in pdf format',
+            'photo.image'               => 'Photo must be in image file format (jpg, jpeg, png etc.)',
             'githubLink.required'       => 'This field Link is required',
-            'githubLink.url'            => 'Please enter a valid link.',
+            'githubLink.url'            => 'Please enter a valid link',
             'facebookLink.required'     => 'This field is required',
-            'facebookLink.url'          => 'Please enter a valid link.',
+            'facebookLink.url'          => 'Please enter a valid link',
             'instagramLink.required'    => 'This field is required',
-            'instagramLink.url'         => 'Please enter a valid link.',
+            'instagramLink.url'         => 'Please enter a valid link',
             'whatsappLink.required'     => 'This field is required',
-            'whatsappLink.url'          => 'Please enter a valid link.',
+            'whatsappLink.url'          => 'Please enter a valid link',
         ]);
 
         // input 
         Header::updateHeader($request, $id);
-        return redirect(route('manage.header'))->with('msg', 'Congrats, Header updated successfully...!');
+        return redirect(route('manage.header'))->with('msg', 'Header info updated successfully...!');
     }
 
     public function show(String $id){

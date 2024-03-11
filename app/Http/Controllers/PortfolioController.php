@@ -19,12 +19,12 @@ class PortfolioController extends Controller
             'githubLink'    => 'nullable|max:5000|url',
             'liveDemo'      => 'required|max:5000|url'
         ], [
-            'thumbnail.required'    => 'This field is required.',
-            'thumbnail.image'       => 'This field can only contain image file type. e.g(jpg, png, jpeg).',
-            'title.required'        => 'This field is required.',
-            'githubLink.url'        => 'Please enter a valid link.',
-            'liveDemo.required'     => 'This field is required.',
-            'liveDemo.url'          => 'Please enter a valid link.',
+            'thumbnail.required'    => 'This field is required',
+            'thumbnail.image'       => 'Thumbnail must be in image file format (jpg, jpeg, png etc.)',
+            'title.required'        => 'This field is required',
+            'githubLink.url'        => 'Please enter a valid link',
+            'liveDemo.required'     => 'This field is required',
+            'liveDemo.url'          => 'Please enter a valid link',
         ]);
 
         // input 
@@ -50,11 +50,11 @@ class PortfolioController extends Controller
             'githubLink'    => 'nullable|max:5000|url',
             'liveDemo'      => 'required|max:5000|url'
         ], [
-            'thumbnail.image'       => 'This field can only contain image file format. (e.g. jpg, jpeg, png etc.).',
-            'title.required'        => 'This field is required.',
-            'githubLink.url'        => 'Please enter a valid link.',
-            'liveDemo.required'     => 'This field is required.',
-            'liveDemo.url'          => 'Please enter a valid link.',
+            'thumbnail.image'       => 'Thumbnail must be in image file format (jpg, jpeg, png etc.)',
+            'title.required'        => 'This field is required',
+            'githubLink.url'        => 'Please enter a valid link',
+            'liveDemo.required'     => 'This field is required',
+            'liveDemo.url'          => 'Please enter a valid link',
         ]);
         
         // input 

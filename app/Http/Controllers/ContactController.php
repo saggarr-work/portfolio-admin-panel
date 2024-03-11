@@ -15,21 +15,20 @@ class ContactController extends Controller
         // validation 
         $this->validate($request, [
             'emailUsername'         => 'required|max:255',
-            'directEmailLink'       => 'required|max:5000|url',
+            'directEmailLink'       => 'required|max:5000',
             'messengerUsername'     => 'required|max:255',
             'directMessengerLink'   => 'required|max:5000|url',
             'whatsappUsername'      => 'required|max:255',
             'directWhatsappLink'    => 'required|max:5000|url',
         ],[
-            'emailUsername.required'        => 'This field is required.',
-            'directEmailLink.required'      => 'This field is required.',
-            'directEmailLink.url'           => 'Please enter a valid link.',
-            'messengerUsername.required'    => 'This field is required.',
-            'directMessengerLink.required'  => 'This field is required.',
-            'directMessengerLink.url'       => 'Please enter a valid link.',
-            'whatsappUsername.required'     => 'This field is required.',
-            'directWhatsappLink.required'   => 'This field is required.',
-            'directWhatsappLink.url'        => 'Please enter a valid link.',
+            'emailUsername.required'        => 'This field is required',
+            'directEmailLink.required'      => 'This field is required',
+            'messengerUsername.required'    => 'This field is required',
+            'directMessengerLink.required'  => 'This field is required',
+            'directMessengerLink.url'       => 'Please enter a valid link',
+            'whatsappUsername.required'     => 'This field is required',
+            'directWhatsappLink.required'   => 'This field is required',
+            'directWhatsappLink.url'        => 'Please enter a valid link',
         ]);
 
         // logic & input 
@@ -56,21 +55,20 @@ class ContactController extends Controller
         // validation 
         $this->validate($request, [
             'emailUsername'         => 'required|max:255',
-            'directEmailLink'       => 'required|max:5000|url',
+            'directEmailLink'       => 'required|max:5000',
             'messengerUsername'     => 'required|max:255',
             'directMessengerLink'   => 'required|max:5000|url',
             'whatsappUsername'      => 'required|max:255',
             'directWhatsappLink'    => 'required|max:5000|url',
         ],[
-            'emailUsername.required'        => 'This field is required.',
-            'directEmailLink.required'      => 'This field is required.',
-            'directEmailLink.url'           => 'Please enter a valid link.',
-            'messengerUsername.required'    => 'This field is required.',
-            'directMessengerLink.required'  => 'This field is required.',
-            'directMessengerLink.url'       => 'Please enter a valid link.',
-            'whatsappUsername.required'     => 'This field is required.',
-            'directWhatsappLink.required'   => 'This field is required.',
-            'directWhatsappLink.url'        => 'Please enter a valid link.',
+            'emailUsername.required'        => 'This field is required',
+            'directEmailLink.required'      => 'This field is required',
+            'messengerUsername.required'    => 'This field is required',
+            'directMessengerLink.required'  => 'This field is required',
+            'directMessengerLink.url'       => 'Please enter a valid link',
+            'whatsappUsername.required'     => 'This field is required',
+            'directWhatsappLink.required'   => 'This field is required',
+            'directWhatsappLink.url'        => 'Please enter a valid link',
         ]);
 
         // input 

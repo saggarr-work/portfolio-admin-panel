@@ -16,13 +16,13 @@ class ExperienceDteailsController extends Controller
     public function add(Request $request){
         // validation 
         $this->validate($request, [
-            'experience_id' => 'required',
-            'languageOrTools' => 'required|max:255',
+            'experience_id'     => 'required',
+            'languageOrTools'   => 'required|max:255',
             'levelOfExperience' => 'required',
         ], [
-            'experience_id.required' => 'This field is required',
-            'languageOrTools.required' => 'This field is required',
-            'levelOfExperience.required' => 'This field is required',
+            'experience_id.required'        => 'This field is required',
+            'languageOrTools.required'      => 'This field is required',
+            'levelOfExperience.required'    => 'This field is required',
         ]);
 
         // checking 
@@ -53,13 +53,13 @@ class ExperienceDteailsController extends Controller
     public function update(Request $request, String $id){
         // validation 
         $this->validate($request, [
-            'experience_id' => 'required',
-            'languageOrTools' => 'required|max:255',
+            'experience_id'     => 'required',
+            'languageOrTools'   => 'required|max:255',
             'levelOfExperience' => 'required',
         ], [
-            'experience_id.required' => 'This field is required',
-            'languageOrTools.required' => 'This field is required',
-            'levelOfExperience.required' => 'This field is required',
+            'experience_id.required'        => 'This field is required',
+            'languageOrTools.required'      => 'This field is required',
+            'levelOfExperience.required'    => 'This field is required',
         ]);
 
         // checking 
