@@ -34,7 +34,7 @@
                         <select class="form-select" name="service_id" aria-label="Default select example">
                             <option disabled>Select Service</option>
                             @foreach ($services as $ser)
-                                <option {{$serviceDetail->service_id === $ser->id ? 'selected' : ''}} value="{{$ser->id}}">{{$ser->fieldOfService}}</option>
+                                <option {{$serviceDetail->service_id == $ser->id ? 'selected' : ''}} value="{{$ser->id}}">{{$ser->fieldOfService}}</option>
                             @endforeach
                         </select>
                         <span class="text-danger">{{ $errors->has('service_id') ? $errors->first('service_id') : '' }}</span>

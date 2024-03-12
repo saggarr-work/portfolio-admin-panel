@@ -35,7 +35,7 @@
                         <select class="form-select" name="experience_id" aria-label="Default select example">
                             <option disabled>Select experience</option>
                             @foreach ($experience as $exp)
-                                <option {{ $experienceDetails->experience_id === $exp->id ? 'selected' : '' }}
+                                <option {{ $experienceDetails->experience_id == $exp->id ? 'selected' : '' }}
                                     value="{{ $exp->id }}">{{ $exp->fieldOfExperience }}</option>
                             @endforeach
                         </select>
