@@ -52,7 +52,7 @@
                     <div class="col-md-6">
                         <label for="about_photo" class="form-label">Upload Formal Photo</label><span class="text-danger"><b>
                                 * </b></span><sub>(prefered size 300 x 300 px)</sub>
-                        <input type="file" name="photo" class="form-control" id="about_photo" value="" required>
+                        <input type="file" accept="image/*" name="photo" class="form-control" id="about_photo" value="" required>
                         <span class="text-danger">{{ $errors->has('photo') ? $errors->first('photo') : '' }}</span>
                     </div>
                     <div class="col-md-12">

@@ -34,13 +34,12 @@
                         <label for="field_of_experience" class="form-label">Select Experience</label>
                         <select class="form-select" name="experience_id" aria-label="Default select example">
                             <option disabled>Select experience</option>
-                            @foreach ($experience as $experience)
-                                <option {{ $experienceDetails->experience_id === $experience->id ? 'selected' : '' }}
-                                    value="{{ $experience->id }}">{{ $experience->fieldOfExperience }}</option>
+                            @foreach ($experience as $exp)
+                                <option {{ $experienceDetails->experience_id === $exp->id ? 'selected' : '' }}
+                                    value="{{ $exp->id }}">{{ $exp->fieldOfExperience }}</option>
                             @endforeach
                         </select>
-                        <span
-                            class="text-danger">{{ $errors->has('experience_id') ? $errors->first('experience_id') : '' }}</span>
+                        <span class="text-danger">{{ $errors->has('experience_id') ? $errors->first('experience_id') : '' }}</span>
                     </div>
                     <div class="col-md-6">
                         <label for="field_of_experience" class="form-label">Language / Tools</label>

@@ -32,9 +32,9 @@
                     <div class="col-md-6">
                         <label for="select_service" class="form-label">Select Service</label>
                         <select class="form-select" name="service_id" aria-label="Default select example">
-                            <option selected disabled>Select Service</option>
-                            @foreach ($services as $service)
-                                <option {{$serviceDetail->service_id === $service->id ? 'selected' : ''}} value="{{$service->id}}">{{$service->fieldOfService}}</option>
+                            <option disabled>Select Service</option>
+                            @foreach ($services as $ser)
+                                <option {{$serviceDetail->service_id === $ser->id ? 'selected' : ''}} value="{{$ser->id}}">{{$ser->fieldOfService}}</option>
                             @endforeach
                         </select>
                         <span class="text-danger">{{ $errors->has('service_id') ? $errors->first('service_id') : '' }}</span>
